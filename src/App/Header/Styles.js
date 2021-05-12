@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import img from '../../shared/assests/Logo Black Full-1.svg'
+import { mixins } from '../../shared/utils/styles';
+
 
 export const Wrap = styled.div`
     height: 80px;
@@ -10,17 +12,17 @@ export const Wrap = styled.div`
 export const PageLogo = styled.img.attrs({
     src: img
 })`
-    /* background-image: url(${img}); */
-    /* background-color: black; */
     margin-top: 28px;
     margin-left: 138px;
     height: 24px;
     width: 125px;
+    ${mixins.clickable}
 `;
 
 export const  NavBar = styled.div`
     display: flex;
     align-items: center;
     margin-left: auto;
-    background-color:red;
+    justify-content: space-between;
+    margin-right: 153px;
 `;

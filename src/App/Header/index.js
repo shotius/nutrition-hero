@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../shared/components/Button'
 import { Wrap, PageLogo, NavBar } from './Styles'
 
 const Header = () => {
@@ -6,7 +7,12 @@ const Header = () => {
         <Wrap>
             <PageLogo />
             <NavBar >
-                <button></button>
+                <Button variant="navLink">Exercises</Button>
+                <Button variant="navLink">expreties</Button>
+                <Button variant="navLink">nutrition</Button>
+                <Button variant="navLink">app</Button>
+                <Button variant="signUp">Sign up</Button>
+                <Button variant="login">login</Button>
             </NavBar>
         </Wrap>
     )
