@@ -13,7 +13,7 @@ export const PageLogo = styled.img.attrs({
     src: img
 })`
     margin-top: 28px;
-    margin-left: 138px;
+    margin-left: 152px;
     height: 24px;
     width: 125px;
     ${mixins.clickable}
