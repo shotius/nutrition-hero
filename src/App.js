@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import MainSection from './components/MainSection';
 import NormalizeStyle from './NormalizeStyle';
-
+import SectionTwo from './components/SectionTwo'
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <NormalizeStyle />
       <Header />
       <MainSection />
+      <SectionTwo />
   </>
   );
 }

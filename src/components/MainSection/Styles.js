@@ -4,7 +4,7 @@ import img from  '../../shared/assests/Large Hero.png'
 import { font } from "../../shared/utils/styles";
 // const img = '/home/shoutius/sweeft_digital/workout/nutrition-react/src/shared/assests/Large Hero.png'
 
-export const MainHeadingWrap = styled.div`
+export const MainSectionWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +19,7 @@ export const ImgBackground = styled.img.attrs({
     width: 100%;
     z-index: -9;
     position: absolute;
+    height: 720px;
 `;
 
 export const PageHeading = styled.h1`

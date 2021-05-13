@@ -2,6 +2,7 @@ import {css} from 'styled-components'
 
 export const colors = {
     darkPurple: '#80334B',
+    darkBlue: '#182849'
 }
 
 export const font = {

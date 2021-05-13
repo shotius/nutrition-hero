@@ -3,6 +3,7 @@ import { font } from "../../utils/styles";
 
 export const StyledHeader = styled.h1`
     ${font.bold}
+    ${props => (props.color && css`color: ${props.color}`)}
     ${props => headerTypes[props.type]}
 `;
 

@@ -8,6 +8,7 @@ export const StyledButton = styled.button`
   height: 25px;
   background: none;
   border: none;
+  transition: all 0.3s;
   ${props => (props.margin ? css`margin: ${props.margin};`: css`margin: 0px;`)}
   ${font.normal};
   ${font.size(14)};
@@ -43,6 +44,10 @@ const primary = css`
   border-radius: 5px;
   &:active {
    transform: scale(0.97);
+  }
+  &:hover {
+    opacity: 0.7;
+    box-shadow: 1px 0px 7px grey;
   }
 `;
 
