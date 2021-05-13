@@ -1,11 +1,12 @@
 import React from 'react'
 import {StyledHeader} from './Styles'
 
-const SectionHeader = ({ children, type, color = 'black' }) => {
+const SectionHeader = ({ children, size, flexPosition,  color = 'black' }) => {
     return (
         <StyledHeader
-            type={type}
+            size={size}
             color={color}
+            flexPosition={flexPosition}
         >
             {children}
         </StyledHeader>

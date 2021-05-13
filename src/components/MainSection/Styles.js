@@ -2,31 +2,22 @@ import styled from "styled-components";
 
 import img from  '../../shared/assests/Large Hero.png'
 import { font } from "../../shared/utils/styles";
-// const img = '/home/shoutius/sweeft_digital/workout/nutrition-react/src/shared/assests/Large Hero.png'
 
 export const MainSectionWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 720px;
+    height: 90vh;
     width: 100%;
-    background-image: url(${'../shared/assests/Large Hero.png'});
-`;
-
-export const ImgBackground = styled.img.attrs({
-    src: img
-})`
-    width: 100%;
-    z-index: -9;
-    position: absolute;
-    height: 720px;
+    background-image: url('${img}');
+    background-repeat: no-repeat;
+    background-size: cover;
 `;
 
 export const PageHeading = styled.h1`
-     width: 600px;
-    height: 145px;
     font-size: 60px;
     letter-spacing: 0.02px;
+    line-height: 72px;
     text-align: center;
     text-transform: capitalize;
     margin-top: 227px;

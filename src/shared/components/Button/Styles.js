@@ -3,32 +3,54 @@ import {colors, font, mixins } from '../../utils/styles'
 
 export const StyledButton = styled.button`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 25px;
   background: none;
   border: none;
-  transition: all 0.3s;
+  transition: all 0.02s;
   ${props => (props.margin ? css`margin: ${props.margin};`: css`margin: 0px;`)}
   ${font.normal};
   ${font.size(14)};
   ${mixins.clickable};
-  ${props => buttonVariants[props.variant]};
+  ${props => buttonVariants[props.type]};
 `;
 
+
+const btmLine = css`
+ &::after {
+    display: block;
+    content: "";
+    position: relative;
+    top: 3px;
+    border-radius: 2px;    
+    border: 2px solid #fff;
+    ${props => (props.btmLine 
+      ? css`
+      width: ${props.btmLine.width};
+      border-width: ${props.btmLine.height}` 
+      : css`
+      width: 100%;`)};
+    }
+  &:hover:after {
+    background: ${colors.darkPurple};
+    border-color:${colors.darkPurple};
+  }
+`
 const navLink = css`
   text-transform: uppercase;
   margin-right: 31px;
-  &:hover {
-    border-bottom: 3px solid ${colors.darkPurple};
-    ${font.bold}
-  }
+  margin-top: 7px;
+  ${btmLine}
+  
 `;
 
 const tagLink = css`
-  &:hover {
-    background-color: red;
-  }
+  text-transform: capitalize;
+  padding: 0px 15px;
+  color: ${colors.Grey};
+  ${btmLine}
 `;
 
 const primary = css`
@@ -64,5 +86,3 @@ const buttonVariants = {
     }
   `,
 }
-
-

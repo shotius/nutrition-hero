@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { colors } from "../../shared/utils/styles";
 
 export const SectionTwoWrap = styled.div`
@@ -18,3 +18,20 @@ export const ExerciseWrap = styled.div`
     border-radius: 10px;
     background-color: white;
 `;
+
+export const TagLinks = styled.div`
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 28px;
+    ${props => props.flexPosition && css`justify-content: ${props.flexPosition}`}
+`
+
+export const TagInfoWrap = styled.div`
+     display: flex;
+    margin-top: 55px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+    background-color: red;
+`

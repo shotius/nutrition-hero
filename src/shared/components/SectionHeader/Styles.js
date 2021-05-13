@@ -2,19 +2,18 @@ import styled, { css } from "styled-components";
 import { font } from "../../utils/styles";
 
 export const StyledHeader = styled.h1`
-    ${font.bold}
-    ${props => (props.color && css`color: ${props.color}`)}
-    ${props => headerTypes[props.type]}
+    display: flex;
+    ${font.bold};
+    ${props => (props.flexPosition && css`justify-content: ${props.flexPosition}`)};
+    ${props => (props.color && css`color: ${props.color}`)};
+    ${props => headerTypes[props.size]};
 `;
 
 const headerTypes = {
-    h1: css`
-        ${font.size.h1}
+    large: css`
+        ${font.size(42)}
     `,
-    h2: css`
-        ${font.size.h2}
+    medium: css`
+        ${font.size(22)}
     `,
-    h3: css`
-        ${font.size.h3}
-    `
 }

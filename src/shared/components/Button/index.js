@@ -3,15 +3,17 @@ import { StyledButton } from './Styles'
 
 const Button = ({
     children,
-    variant,
+    type,
     width,
     margin,
+    btmLine
 }) => {
     return (
         <StyledButton
-            variant={variant}
+            type={type}
             width={width}
             margin={margin}
+            btmLine={btmLine}
         >
             {children}
         </StyledButton>
