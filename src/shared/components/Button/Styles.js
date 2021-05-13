@@ -8,10 +8,11 @@ export const StyledButton = styled.button`
   height: 25px;
   background: none;
   border: none;
+  ${props => (props.margin ? css`margin: ${props.margin};`: css`margin: 0px;`)}
   ${font.normal};
-  ${font.size(14)}
-  ${mixins.clickable}
-  ${props => buttonVariants[props.variant]}
+  ${font.size(14)};
+  ${mixins.clickable};
+  ${props => buttonVariants[props.variant]};
 `;
 
 const navLink = css`
@@ -29,10 +30,13 @@ const tagLink = css`
   }
 `;
 
-const signUp = css`
-  margin-right: 31px;
+const primary = css`
   height: 40px;
-  width: 69px;
+  ${props => (props.width ? css`
+    width: ${props.width};`
+    : css`
+    width: 69px;
+  `)};
   background-color: ${colors.darkPurple};
   color: white;
   border: 1px solid #80334B;
@@ -46,7 +50,7 @@ const signUp = css`
 const buttonVariants = {
   navLink: navLink,
   tagLink: tagLink,
-  signUp: signUp,
+  primary: primary,
   login: css`
     text-transform: capitalize;
     color: ${colors.darkPurple};

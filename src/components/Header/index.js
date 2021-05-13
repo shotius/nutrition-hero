@@ -11,7 +11,7 @@ const Header = () => {
                 <Button variant="navLink">expreties</Button>
                 <Button variant="navLink">nutrition</Button>
                 <Button variant="navLink">app</Button>
-                <Button variant="signUp">Sign up</Button>
+                <Button variant="primary" margin="0px 31px 0px 0px">Sign up</Button>
                 <Button variant="login">login</Button>
             </NavBar>
         </Wrap>

@@ -1,5 +1,5 @@
 import Header from './components/Header'
-import MainHeading from './components/MainHeading';
+import MainSection from './components/MainSection';
 import NormalizeStyle from './NormalizeStyle';
 
 
@@ -8,7 +8,7 @@ function App() {
    <>
       <NormalizeStyle />
       <Header />
-      <MainHeading />
+      <MainSection />
   </>
   );
 }

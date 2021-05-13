@@ -7,6 +7,7 @@ export const Wrap = styled.div`
     height: 80px;
     display: flex;
     box-shadow: 0px 3px 6px #00000029;
+    background: white;
 `;
 
 export const PageLogo = styled.img.attrs({
