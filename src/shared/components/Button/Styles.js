@@ -23,7 +23,7 @@ const btmLine = css`
     display: block;
     content: "";
     position: relative;
-    top: 3px;
+    top: 4px;
     border-radius: 2px;    
     border: 2px solid #fff;
     ${props => (props.btmLine 
@@ -51,6 +51,10 @@ const tagLink = css`
   padding: 0px 15px;
   color: ${colors.Grey};
   ${btmLine}
+  &:hover {
+    color: #000;
+    ${font.bold}
+  }
 `;
 
 const primary = css`
