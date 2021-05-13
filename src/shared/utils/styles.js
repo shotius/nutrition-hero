@@ -4,6 +4,7 @@ export const colors = {
     darkPurple: '#80334B',
     darkBlue: '#182849',
     Grey: '#676069',
+    dirtyWhite: '#EFEFF4'
 }
 
 export const font = {

@@ -10,7 +10,6 @@ export const StyledButton = styled.button`
   background: none;
   border: none;
   transition: all 0.02s;
-  ${props => (props.margin ? css`margin: ${props.margin};`: css`margin: 0px;`)}
   ${font.normal};
   ${font.size(14)};
   ${mixins.clickable};
@@ -37,7 +36,8 @@ const btmLine = css`
     background: ${colors.darkPurple};
     border-color:${colors.darkPurple};
   }
-`
+`;
+
 const navLink = css`
   text-transform: uppercase;
   margin-right: 31px;
@@ -46,10 +46,12 @@ const navLink = css`
   
 `;
 
+
 const tagLink = css`
   text-transform: capitalize;
   padding: 0px 15px;
-  color: ${colors.Grey};
+  margin: 0px 16px;
+  ${props => (props.color && css`color: ${colors[props.color]}`)};
   ${btmLine}
   &:hover {
     color: #000;
@@ -59,15 +61,16 @@ const tagLink = css`
 
 const primary = css`
   height: 40px;
+  background-color: ${colors.darkPurple};
+  color: white;
+  border: 1px solid #80334B;
+  border-radius: 5px;
   ${props => (props.width ? css`
     width: ${props.width};`
     : css`
     width: 69px;
   `)};
-  background-color: ${colors.darkPurple};
-  color: white;
-  border: 1px solid #80334B;
-  border-radius: 5px;
+  ${props => (props.margin && css`margin: ${props.margin}`)};
   &:active {
    transform: scale(0.97);
   }
