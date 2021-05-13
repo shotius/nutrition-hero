@@ -7,7 +7,7 @@ export const MainSectionWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
+    height: calc(100vh - 78px);
     width: 100%;
     background-image: url('${img}');
     background-repeat: no-repeat;
