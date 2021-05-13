@@ -11,7 +11,7 @@ export const StyledHeader = styled.h1`
 
 const headerTypes = {
     large: css`
-        ${font.size(42)}
+        ${font.size(42)};
     `,
     medium: css`
         ${font.size(22)}

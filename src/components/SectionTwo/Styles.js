@@ -9,16 +9,16 @@ export const SectionTwoWrap = styled.div`
     height: 900px;
     width: 100%;
     background-color: ${colors.darkBlue};
-    overflow: hidden;
 `;
 
 export const ExerciseWrap = styled.div`
-    position: absolute;
-    width: 70%;
-    height: 512px;
+    padding: 20px 20px 50px;
+    position: relative;
+    width: 100%;
     margin-top: -100px;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: white;
+    box-shadow: -5px -10px 20px #00000033;
 `;
 
 export const TagLinks = styled.div`
@@ -31,23 +31,27 @@ export const TagLinks = styled.div`
 
 export const TagInfoWrap = styled.div`
     display: flex;
+    justify-content: space-around;
+    margin: auto;
     margin-top: 32px;
-    justify-content: space-evenly;
     align-items: center;
-    width: 100%;
-    max-height: 260px;
+    width: 80%;
+`;
+
+export const ImageWrapper = styled.div`
+    width: 50%;
 `;
 
 export const TagPicture = styled.img.attrs(props => ({
     src: img
   }))`
-    margin-top: 35px;
-    width: 40%;
-    height: 100%;
+    width: 100%;
+    /* height: 100%; */
 `;
 
 export const TextWrap = styled.div`
-    width: 30%;
+    width: 50%;
+    padding: 2em;
     ${font.normal};
 `;
 
