@@ -32,15 +32,14 @@ export const TagInfoWrap = styled.div`
     display: flex;
     justify-content: space-between;
     margin: auto;
-    margin-top: 32px;
-    align-items: center;
-    width: 80%;
+    margin-top: 33px;
+    padding: 0px 85px;
 `;
 
 export const ImageWrapper = styled.div`
-    width: 50%;
-    max-height: 319px;
-    max-width: 494px;
+    display: flex;
+    flex: 0.48;
+    ${props => (props.width && css`height: ${props.width}`)};
 `;
 
 export const TagPicture = styled.img.attrs(props => ({
@@ -51,7 +50,9 @@ export const TagPicture = styled.img.attrs(props => ({
 `;
 
 export const TextWrap = styled.div`
-    width: 42%;
+    display: flex;
+    flex: 0.45;
+    flex-direction: column;
     ${props => (props.color && css`color: ${colors[props.color]}`)};
     ${font.regular};
     line-height: 24px;
