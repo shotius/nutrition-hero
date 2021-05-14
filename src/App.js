@@ -3,6 +3,7 @@ import MainSection from './components/MainSection';
 import NormalizeStyle from './NormalizeStyle';
 import SectionTwo from './components/SectionTwo'
 import Sliders from './components/Sliders';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <MainSection />
       <SectionTwo />
       <Sliders />
+      <Footer />
   </>
   );
 }
