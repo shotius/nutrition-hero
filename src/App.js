@@ -2,6 +2,7 @@ import Header from './components/Header'
 import MainSection from './components/MainSection';
 import NormalizeStyle from './NormalizeStyle';
 import SectionTwo from './components/SectionTwo'
+import Sliders from './components/Sliders';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <MainSection />
       <SectionTwo />
+      <Sliders />
   </>
   );
 }

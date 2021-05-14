@@ -14,6 +14,9 @@ const headerTypes = {
         ${font.size(42)};
     `,
     medium: css`
-        ${font.size(22)}
+        padding: 10px 0px;
+        line-height: 24px;
+        ${font.medium};
+        ${font.size(22)};
     `,
 }

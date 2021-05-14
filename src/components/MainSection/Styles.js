@@ -31,5 +31,5 @@ export const ShortDescription = styled.p`
     margin-top: 10px;
     text-align: center;
     ${font.size(22)}
-    ${font.normal}
+    ${font.regular}
 `

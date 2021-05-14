@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
   background: none;
   border: none;
   transition: all 0.02s;
-  ${font.normal};
+  ${font.regular};
   ${font.size(14)};
   ${mixins.clickable};
   ${props => buttonVariants[props.type]};
@@ -24,17 +24,16 @@ const btmLine = css`
     position: relative;
     top: 4px;
     border-radius: 2px;    
-    border: 2px solid #fff;
+    border: 2px solid;
+    border-color: transparent;
     ${props => (props.btmLine 
-      ? css`
-      width: ${props.btmLine.width};
-      border-width: ${props.btmLine.height}` 
-      : css`
-      width: 100%;`)};
+      && css`
+        width: ${props.btmLine.width};
+        border-width: ${props.btmLine.height}`)};
     }
   &:hover:after {
     background: ${colors.darkPurple};
-    border-color:${colors.darkPurple};
+    border-color:${colors.darkPurple} ;
   }
 `;
 
@@ -50,11 +49,16 @@ const navLink = css`
 const tagLink = css`
   text-transform: capitalize;
   padding: 0px 15px;
-  margin: 0px 16px;
+  margin-right: 16px;
+  font-size: 12px;
   ${props => (props.color && css`color: ${colors[props.color]}`)};
   ${btmLine}
   &:hover {
-    color: #000;
+    ${props => (props.onhover 
+    ? css`
+      color: ${colors[props.onhover]}`
+    : css`
+      color: black`)}
     ${font.bold}
   }
 `;

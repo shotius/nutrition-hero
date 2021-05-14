@@ -7,7 +7,8 @@ const Button = ({
     width,
     margin,
     color, 
-    btmLine
+    btmLine,
+    onhover,
 }) => {
     return (
         <StyledButton
@@ -16,6 +17,7 @@ const Button = ({
             margin={margin}
             btmLine={btmLine}
             color={color}
+            onhover={onhover}
         >
             {children}
         </StyledButton>

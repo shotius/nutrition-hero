@@ -1,18 +1,17 @@
 import styled, {css} from "styled-components";
 import { colors, font } from "../../shared/utils/styles";
-import img from  '../../shared/assests/Mail_Image.png'
+// import imkg from  '../../shared/assests/Mail_Image.png'
 const url = require('/home/shoutius/sweeft_digital/workout/nutrition-react/src/shared/assests/pete.png')
 
 export const SectionTwoWrap = styled.div`
     display: flex;
     justify-content: center; 
-    height: 900px;
     width: 100%;
     background-color: ${colors.darkBlue};
 `;
 
 export const ExerciseWrap = styled.div`
-    padding: 20px 20px 50px;
+    padding: 20px 0px 50px;
     position: relative;
     width: 100%;
     margin-top: -100px;
@@ -31,7 +30,7 @@ export const TagLinks = styled.div`
 
 export const TagInfoWrap = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: auto;
     margin-top: 32px;
     align-items: center;
@@ -40,23 +39,28 @@ export const TagInfoWrap = styled.div`
 
 export const ImageWrapper = styled.div`
     width: 50%;
+    max-height: 319px;
+    max-width: 494px;
 `;
 
 export const TagPicture = styled.img.attrs(props => ({
-    src: img
+    src: props.src
   }))`
+    height: 100%;
     width: 100%;
-    /* height: 100%; */
 `;
 
 export const TextWrap = styled.div`
-    width: 50%;
-    padding: 2em;
-    ${font.normal};
+    width: 42%;
+    ${props => (props.color && css`color: ${colors[props.color]}`)};
+    ${font.regular};
+    line-height: 24px;
 `;
 
 export const NutritionWrap = styled.div`
-    margin-top: 490px;
-    height: 319px ;
-    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    padding: 90px 0px 50px;
+    position: relative;
+    width: 100%;
 `;
