@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { colors, font } from "../../../shared/utils/styles";
 
 export const SliderWrapper = styled.div`

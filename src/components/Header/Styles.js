@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import img from '../../shared/assests/Logo Black Full-1.svg'
 import { mixins } from '../../shared/utils/styles';
 

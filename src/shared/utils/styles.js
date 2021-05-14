@@ -1,4 +1,4 @@
-import {css} from 'styled-components'
+import {css} from 'styled-components/macro'
 
 export const colors = {
     darkPurple: '#80334B',

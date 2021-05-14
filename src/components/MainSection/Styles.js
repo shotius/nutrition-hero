@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 import img from  '../../shared/assests/Large Hero.png'
 import { font } from "../../shared/utils/styles";

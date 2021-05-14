@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, {css} from "styled-components/macro";
 import {colors, font, mixins } from '../../utils/styles'
 
 export const StyledButton = styled.button`
@@ -23,14 +23,22 @@ const btmLine = css`
     content: "";
     position: relative;
     top: 4px;
-    border-radius: 2px;    
+    border-radius: 2px;  
     border: 2px solid;
-    border-color: transparent;
-    ${props => (props.btmLine 
-      && css`
-        width: ${props.btmLine.width};
-        border-width: ${props.btmLine.height}`)};
-    }
+    ${props => (props.isActive
+      ? css`
+      background: ${colors.darkPurple};
+      border-color:${colors.darkPurple};`
+      : css`
+      border-color: transparent;
+      `)}  
+    ${props => (props.type === 'tagLink' 
+      ? css`
+      width: 160%;
+      border-width: 1px;`
+      : css`
+      width: 100%;`
+    )}}
   &:hover:after {
     background: ${colors.darkPurple};
     border-color:${colors.darkPurple} ;
@@ -51,6 +59,7 @@ const tagLink = css`
   padding: 0px 15px;
   margin-right: 16px;
   font-size: 12px;
+
   ${props => (props.color && css`color: ${colors[props.color]}`)};
   ${btmLine}
   &:hover {

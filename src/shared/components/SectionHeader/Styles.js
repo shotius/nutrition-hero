@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from "styled-components/macro";
 import { font } from "../../utils/styles";
 
 export const StyledHeader = styled.h1`

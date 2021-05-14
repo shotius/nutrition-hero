@@ -7,17 +7,22 @@ const Button = ({
     width,
     margin,
     color, 
-    btmLine,
     onhover,
+    onClick,
+    isActive
 }) => {
+    const handleClick = () => {
+        onClick()
+    }
     return (
         <StyledButton
             type={type}
             width={width}
             margin={margin}
-            btmLine={btmLine}
             color={color}
             onhover={onhover}
+            onClick={handleClick}
+            isActive={isActive}
         >
             {children}
         </StyledButton>

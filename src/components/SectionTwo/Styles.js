@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, {css} from "styled-components/macro";
 import { colors, font } from "../../shared/utils/styles";
 // import imkg from  '../../shared/assests/Mail_Image.png'
 const url = require('/home/shoutius/sweeft_digital/workout/nutrition-react/src/shared/assests/pete.png')
