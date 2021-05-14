@@ -1,30 +1,43 @@
-import styled from "styled-components/macro";
-import { colors, font } from "../../../shared/utils/styles";
+import styled, {css} from "styled-components/macro";
 
 export const SliderWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 720px;
+   width: 100%;
+  height: 730px;
+  border: 1px solid #EFEFF4;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  /* overflow: hidden; */
 `;
 
-export const ImgWrap = styled.div`
-    width: 50%;
-    height: 100%;
-`;
-
-export const TextWrap = styled.div`
+export const Slide = styled.div`
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    width: 40%;
-    line-height: 24px;
-    ${font.regular};
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    transition: all 0.5s;
+    border: 1px solid red;
+    ${props => (
+        props.translate 
+        && 
+        css`
+        transform: translate(${props.translate}%)
+    `)
+    }
 `;
 
-export const Img = styled.img.attrs(props => ({
-    src: props.src
-}))`
-    width: 100%;
+export const ButtonLeft = styled.button`
+    position: absolute;
     height: 100%;
+    left: 0px;
+    z-index: 10;
+`;
+
+export const ButtonRight = styled.button`
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    z-index: 10;
 `;
