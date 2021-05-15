@@ -1,13 +1,13 @@
 import styled, {css} from "styled-components/macro";
 
 export const SliderWrapper = styled.div`
-   width: 100%;
+  width: 100%;    
   height: 730px;
   border: 1px solid #EFEFF4;
   display: flex;
   justify-content: flex-start;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
 `;
 
 export const Slide = styled.div`
@@ -17,13 +17,13 @@ export const Slide = styled.div`
     height: 100%;
     width: 100%;
     flex-shrink: 0;
-    transition: all 0.5s;
-    border: 1px solid red;
-    ${props => (
-        props.translate 
-        && 
-        css`
-        transform: translate(${props.translate}%)
+    font-size: 100px;
+    /* border: 1px solid red; */
+    ${props => (props.transition && css`
+            transition: ${props.transition};`)};
+    ${props => (props.translate 
+        && css`
+            transform: translate(${props.translate}%)
     `)
     }
 `;
