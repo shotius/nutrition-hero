@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import { SliderContainer, Slide, ButtonLeft, ButtonRight, Container, Carousel} from './Styles'
+import { SliderContainer, Slide, ButtonLeft, ButtonRight, Carousel} from './Styles'
+import rightArrow from '../../../shared/assests/Group 2350.svg'
+import leftArrow from '../../../shared/assests/Group 2416.svg'
 
 const Slider = () => {
-    const transitionStyle = 'all 0.5s'
     const data = ['slide 1', 'slide 2', 'slide 3']
+
+    const transitionStyle = 'all 0.5s'
     const shiftUnit = (-100 / (data.length + 2))
+    const sleepTime = 5000
     
     const [transition, setTransition] = useState(transitionStyle)
     const [translate, setTranslate] = useState(shiftUnit)
     const [isSliding, setIsSliding] = useState(false)
     const [direction , setDirection] = useState(-1)
-    const [slideCount, setSlideCount] = useState(0)
+    const [sliderMoves, setSliderMoves] = useState(0)
 
-    useEffect(() => {
-        setTimeout(() => goRight(), 1000)
-    }, [slideCount])
+    // slider timer
+    // useEffect(() => {
+    //     setTimeout(() => goRight(), sleepTime)
+    // }, [sliderMoves])
 
     const goLeft = () => {
         if (!isSliding) {
@@ -46,7 +51,7 @@ const Slider = () => {
             setTranslate(shiftUnit)
         }
         setIsSliding(false)
-        setSlideCount(slideCount+1)
+        setSliderMoves(sliderMoves+1)
     }
 
     return (
@@ -62,8 +67,8 @@ const Slider = () => {
                     ))}
                     <Slide>{data[0]}</Slide>
             </SliderContainer>
-           <ButtonRight onClick={goRight}>right</ButtonRight>
-           <ButtonLeft  onClick={goLeft}>left</ButtonLeft>
+           <ButtonLeft  onClick={goLeft}><img src={leftArrow} alt="left"/></ButtonLeft>
+           <ButtonRight onClick={goRight}><img src={rightArrow} alt="right"/></ButtonRight>
        </Carousel>
     )
 }

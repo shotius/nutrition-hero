@@ -1,6 +1,5 @@
 import styled, {css} from "styled-components/macro";
 
-
 export const Carousel = styled.div`
     width: 100%;
     height: 720px;
@@ -36,16 +35,30 @@ export const Slide = styled.div`
     font-size: 100px;
 `;
 
-export const ButtonLeft = styled.button`
+const buttonStyle = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    height: 100%;
-    left: 0px;
+    bottom: 52px;
+    cursor: pointer;
+    height: 40px;
+    width: 69px;
+    background-color: #FAFAFD;
+    border-radius: 4px;
+    border: none;
     z-index: 10;
+    &:active {
+        transform: scale(0.9);
+    }
+`;
+export const ButtonLeft = styled.button`
+    ${buttonStyle}
+    left: 130px;
 `;
 
 export const ButtonRight = styled.button`
-    position: absolute;
-    height: 100%;
-    right: 0px;
-    z-index: 10;
+    ${buttonStyle}
+    right: 130px;
+    
 `;
