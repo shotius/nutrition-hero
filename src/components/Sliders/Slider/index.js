@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SliderContainer, Slide, ButtonLeft, ButtonRight, Container, Carousel} from './Styles'
 
 const Slider = () => {
@@ -10,6 +10,11 @@ const Slider = () => {
     const [translate, setTranslate] = useState(shiftUnit)
     const [isSliding, setIsSliding] = useState(false)
     const [direction , setDirection] = useState(-1)
+    const [slideCount, setSlideCount] = useState(0)
+
+    useEffect(() => {
+        setTimeout(() => goRight(), 1000)
+    }, [slideCount])
 
     const goLeft = () => {
         if (!isSliding) {
@@ -41,6 +46,7 @@ const Slider = () => {
             setTranslate(shiftUnit)
         }
         setIsSliding(false)
+        setSlideCount(slideCount+1)
     }
 
     return (
@@ -56,8 +62,8 @@ const Slider = () => {
                     ))}
                     <Slide>{data[0]}</Slide>
             </SliderContainer>
-           <ButtonLeft  onClick={goLeft}>left</ButtonLeft>
            <ButtonRight onClick={goRight}>right</ButtonRight>
+           <ButtonLeft  onClick={goLeft}>left</ButtonLeft>
        </Carousel>
     )
 }
