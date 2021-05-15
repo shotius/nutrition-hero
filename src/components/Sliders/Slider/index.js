@@ -1,26 +1,62 @@
 import React, { useState } from 'react'
-import { SliderWrapper, Slide, ButtonLeft, ButtonRight, Carousel, Container} from './Styles'
+import { SliderContainer, Slide, ButtonLeft, ButtonRight, Container, Carousel} from './Styles'
 
 const Slider = () => {
-    const [translate, setTranslate] = useState(-100)
-    const [transition, setTransition] = useState()
-
+    const transitionStyle = 'all 0.5s'
     const data = ['slide 1', 'slide 2', 'slide 3']
+    const shiftUnit = (-100 / (data.length + 2))
+    
+    const [transition, setTransition] = useState(transitionStyle)
+    const [translate, setTranslate] = useState(shiftUnit)
+    const [isSliding, setIsSliding] = useState(false)
 
-    return ( 
-        <Container>
-            <Carousel>
-                <SliderWrapper>
-                    <Slide>{data[data.length-1]}</Slide>
+    const goLeft = () => {
+        if (!isSliding) {
+            setIsSliding(true)
+            setTransition(transitionStyle)
+            setTranslate(translate - shiftUnit )
+        }
+        if (translate === shiftUnit) {
+            console.log('reset')
+            setTransition('none')
+            setTranslate((data.length) * (shiftUnit))
+        }
+    }
+
+    const goRight = () => {
+        if (!isSliding) {
+            setIsSliding(true)
+            setTranslate(translate + shiftUnit)
+            setTransition(transitionStyle)
+        }
+        if (translate === (data.length) * (-100)) {
+            setTransition("none")
+            setTranslate(-100)
+        }
+    }
+
+    // according to this variable slider is not working 
+    // while slide animation is going on 
+    const handleStopSliding = () => {
+        setIsSliding(false)
+    }
+
+    return (
+        <Carousel>
+            <SliderContainer 
+                translate={translate} 
+                transition={transition}
+                onTransitionEnd={handleStopSliding}
+                >
+                    <Slide >{data[data.length-1]}</Slide>
                     {data.map((slide, i) => (
-                        <Slide  key={i}>{slide}</Slide>
+                        <Slide key={i}>{slide}</Slide>
                     ))}
-                        <Slide >{data[0]}</Slide>
-                    {/* <ButtonLeft  >left</ButtonLeft>
-                    <ButtonRight >right</ButtonRight> */}
-                </SliderWrapper>
-            </Carousel>
-        </Container>
+                    <Slide>{data[0]}</Slide>
+            </SliderContainer>
+           <ButtonLeft  onClick={goLeft}>left</ButtonLeft>
+           <ButtonRight onClick={goRight}>right</ButtonRight>
+       </Carousel>
     )
 }
 export default Slider
