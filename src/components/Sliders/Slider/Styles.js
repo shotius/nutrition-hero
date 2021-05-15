@@ -7,6 +7,7 @@ export const Carousel = styled.div`
     border: 2px solid green;
     display: flex;
     background: red;
+    overflow: hidden;
 `;
 
 export const SliderContainer = styled.div`

@@ -13,7 +13,6 @@ const Slider = () => {
 
     const goLeft = () => {
         if (!isSliding) {
-            console.log('clicked left')
             setDirection(1)
             setIsSliding(true)
             setTransition(transitionStyle)
@@ -23,23 +22,23 @@ const Slider = () => {
 
     const goRight = () => {
         if (!isSliding) {
+            setDirection(-1)
             setIsSliding(true)
             setTranslate(translate + shiftUnit)
             setTransition(transitionStyle)
         }
-        if (translate === (data.length) * (-100)) {
-            setTransition("none")
-            setTranslate(-100)
-        }
     }
 
-    // according to this variable slider is not working 
-    // while slide animation is going on 
-    const handleStopSliding = () => {
-        // if slide happend left and it was the first slide jump to the last slide
+    // if slide happend right and it was the last slide jump to the first slide
+    // if slide happend left and it was the first slide jump to the last slide
+    const onTransitionEnd = () => {
         if (direction === 1 && translate === 0){
             setTransition('none')
             setTranslate((data.length) * (shiftUnit))
+        }
+        if (direction === -1 && translate === (data.length + 1) * shiftUnit){
+            setTransition("none")
+            setTranslate(shiftUnit)
         }
         setIsSliding(false)
     }
@@ -49,7 +48,7 @@ const Slider = () => {
             <SliderContainer 
                 translate={translate} 
                 transition={transition}
-                onTransitionEnd={handleStopSliding}
+                onTransitionEnd={onTransitionEnd}
                 >
                     <Slide >{data[data.length-1]}</Slide>
                     {data.map((slide, i) => (
