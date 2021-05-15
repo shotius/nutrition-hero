@@ -9,17 +9,15 @@ const Slider = () => {
     const [transition, setTransition] = useState(transitionStyle)
     const [translate, setTranslate] = useState(shiftUnit)
     const [isSliding, setIsSliding] = useState(false)
+    const [direction , setDirection] = useState(-1)
 
     const goLeft = () => {
         if (!isSliding) {
+            console.log('clicked left')
+            setDirection(1)
             setIsSliding(true)
             setTransition(transitionStyle)
             setTranslate(translate - shiftUnit )
-        }
-        if (translate === shiftUnit) {
-            console.log('reset')
-            setTransition('none')
-            setTranslate((data.length) * (shiftUnit))
         }
     }
 
@@ -38,6 +36,11 @@ const Slider = () => {
     // according to this variable slider is not working 
     // while slide animation is going on 
     const handleStopSliding = () => {
+        // if slide happend left and it was the first slide jump to the last slide
+        if (direction === 1 && translate === 0){
+            setTransition('none')
+            setTranslate((data.length) * (shiftUnit))
+        }
         setIsSliding(false)
     }
 
