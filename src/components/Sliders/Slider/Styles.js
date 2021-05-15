@@ -1,38 +1,35 @@
 import styled, {css} from "styled-components/macro";
 
-export const Carousel = styled.div`
+export const Container = styled.div`
+    margin-top: 8px;
+    width: 100%;
+    height: 500px;
+`;
 
+export const Carousel = styled.div`
+    width: 100%;
+    height: 100%;
+    border: 2px solid green;
+    display: flex;
+    /* justify-content: flex-start; */
 `;
 
 export const SliderWrapper = styled.div`
-  width: 100%;    
-  height: 730px;
-  border: 1px solid #EFEFF4;
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-  overflow: hidden;
+    border: 2px solid red;
+    display: flex;
+    height: 100%;
+    width: 500%;
+    flex-shrink: 0;
 `;
 
 export const Slide = styled.div`
+    flex-basis: 20%;
+    width: 20%;
+    flex-shrink: 0;
+    flex: 1;
     display: flex;
-    background-color: yellow; 
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    flex-shrink: 0;
-    font-size: 100px;
-    ${props => (props.transition 
-        ? css`
-            transition: ${props.transition};`
-        : css`
-            transition: all 0.5s;`)};
-    ${props => (props.translate 
-        && css`
-            transform: translate(${props.translate}%)
-    `)
-    }
 `;
 
 export const ButtonLeft = styled.button`
