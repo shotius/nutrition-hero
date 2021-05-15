@@ -3,9 +3,9 @@ import styled, {css} from "styled-components/macro";
 export const Carousel = styled.div`
     width: 100%;
     height: 720px;
+    border: 2px solid green;
     display: flex;
     background: red;
-    position: relative;
     overflow: hidden;
 `;
 

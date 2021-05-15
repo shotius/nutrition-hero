@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react'
 import { SliderContainer, Slide, ButtonLeft, ButtonRight, Carousel} from './Styles'
 import rightArrow from '../../../shared/assests/Group 2350.svg'
 import leftArrow from '../../../shared/assests/Group 2416.svg'
+=======
+import React, { useState } from 'react'
+import { SliderContainer, Slide, ButtonLeft, ButtonRight, Container, Carousel} from './Styles'
+>>>>>>> parent of a50a4bc... added timing to make slider slide automatically
 
 const Slider = () => {
     const data = ['slide 1', 'slide 2', 'slide 3']
@@ -14,12 +19,15 @@ const Slider = () => {
     const [translate, setTranslate] = useState(shiftUnit)
     const [isSliding, setIsSliding] = useState(false)
     const [direction , setDirection] = useState(-1)
+<<<<<<< HEAD
     const [sliderMoves, setSliderMoves] = useState(0)
 
     // slider timer
     // useEffect(() => {
     //     setTimeout(() => goRight(), sleepTime)
     // }, [sliderMoves])
+=======
+>>>>>>> parent of a50a4bc... added timing to make slider slide automatically
 
     const goLeft = () => {
         if (!isSliding) {
@@ -51,7 +59,10 @@ const Slider = () => {
             setTranslate(shiftUnit)
         }
         setIsSliding(false)
+<<<<<<< HEAD
         setSliderMoves(sliderMoves+1)
+=======
+>>>>>>> parent of a50a4bc... added timing to make slider slide automatically
     }
 
     return (
@@ -67,8 +78,13 @@ const Slider = () => {
                     ))}
                     <Slide>{data[0]}</Slide>
             </SliderContainer>
+<<<<<<< HEAD
            <ButtonLeft  onClick={goLeft}><img src={leftArrow} alt="left"/></ButtonLeft>
            <ButtonRight onClick={goRight}><img src={rightArrow} alt="right"/></ButtonRight>
+=======
+           <ButtonLeft  onClick={goLeft}>left</ButtonLeft>
+           <ButtonRight onClick={goRight}>right</ButtonRight>
+>>>>>>> parent of a50a4bc... added timing to make slider slide automatically
        </Carousel>
     )
 }
