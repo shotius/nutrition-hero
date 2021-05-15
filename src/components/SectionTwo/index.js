@@ -37,13 +37,13 @@ const SectionTwo = () => {
                         Exercise
                     </SectionHeader>
                     <TagLinks flexPosition="center">
-                        <Button type="tagLink" isActive={activeIndex === 0 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(0)}>Gym</Button>
-                        <Button type="tagLink" isActive={activeIndex === 1 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(1)}>Home</Button>
+                        <Button type="tagLink" isActive={activeIndex === 0 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(0)}>Home</Button>
+                        <Button type="tagLink" isActive={activeIndex === 1 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(1)}>Gym</Button>
                         <Button type="tagLink" isActive={activeIndex === 2 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(2)}>Yoga</Button>
                     </TagLinks>
                     {console.log('data')}
                     <TagInfoWrap>
-                        <ImageWrapper width="271px">
+                        <ImageWrapper>
                             <TagPicture src={data[activeIndex].img} />
                         </ImageWrapper>
                         <TextWrap>
@@ -60,16 +60,16 @@ const SectionTwo = () => {
                             Nutrition
                         </SectionHeader>
                         <TagLinks flexPosition="flex-start">
-                            <Button type="tagLink" color='dirtyWhite' onhover="white" onClick={() => {}}>healthy</Button>
-                            <Button type="tagLink" color='dirtyWhite' onhover="white" onClick={() => {}}>healthy</Button>
-                            <Button type="tagLink" color='dirtyWhite' onhover="white" onClick={() => {}}>healthy</Button>
+                            <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
+                            <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
+                            <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
                         </TagLinks>
                         <SectionHeader size="medium" color="white">
                         A short title works
                         </SectionHeader> 
                         best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
                     </TextWrap>
-                        <ImageWrapper width="319px">
+                        <ImageWrapper>
                             <TagPicture src={food_1} />
                         </ImageWrapper>
                 </NutritionWrap>
