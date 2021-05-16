@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionHeader from '../../../../shared/components/SectionHeader'
+import SectionHeader from '../../../shared/components/SectionHeader'
 import { ImgWrap, SlideWrapper, TextWrap, Img} from './Styles'
 
 

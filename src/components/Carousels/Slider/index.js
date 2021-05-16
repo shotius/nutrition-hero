@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Slide from './Slide'
-import { SliderContainer, ButtonLeft, ButtonRight, Carousel} from './Styles'
+import Slide from '../Slide'
+import { SliderContainer, ButtonLeft, ButtonRight, Carousel, Dots, Dot, Controls} from './Styles'
 import rightArrow from '../../../shared/assests/Group 2350.svg'
 import leftArrow from '../../../shared/assests/Group 2416.svg'
 import { safeCompare, safeOperation } from '../../../shared/utils/functionsForFloats'
@@ -60,6 +60,10 @@ const Slider = ({data}) => {
         setSliderMoves(sliderMoves + 1)
     }
 
+    const isActive = (n) => {
+        return true
+    }
+
     return (
         <Carousel>
             <SliderContainer 
@@ -73,9 +77,16 @@ const Slider = ({data}) => {
                         <Slide data={slide} width={-shiftUnit} key={i}></Slide>
                     ))}
                     <Slide data={data[0]} width={-shiftUnit}></Slide>
-            </SliderContainer>
-           <ButtonLeft  onClick={goLeft}><img src={leftArrow} alt="left"/></ButtonLeft>
-           <ButtonRight onClick={goRight}><img src={rightArrow} alt="right"/></ButtonRight>
+           </SliderContainer>
+           <Controls>
+                <ButtonLeft  onClick={goLeft}><img src={leftArrow} alt="left"/></ButtonLeft>
+                <ButtonRight onClick={goRight}><img src={rightArrow} alt="right"/></ButtonRight>
+                <Dots>
+                    {data.map((slide, i) => (
+                        <Dot isActive={() => isActive(i)}></Dot>
+                    ))}
+                </Dots>
+           </Controls>
        </Carousel>
     )
 }

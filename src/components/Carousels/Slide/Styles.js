@@ -1,6 +1,7 @@
 
 import styled, { css } from "styled-components/macro";
-import { colors, font } from "../../../../shared/utils/styles";
+import { font } from '../../../shared/utils/styles'
+
 
 export const SlideWrapper = styled.div`
     display: flex;
