@@ -1,26 +1,27 @@
 import React from 'react'
-// import SectionHeader from '../../../shared/components/SectionHeader'
+import SectionHeader from '../../../../shared/components/SectionHeader'
 import { ImgWrap, SlideWrapper, TextWrap, Img} from './Styles'
 
-const Slide = ({ img, name,  header, text, data, width}) => {
+
+const Slide = ({ data, width}) => {
+    console.log('data in slide', data)
     return (
        <SlideWrapper width={width}>
-         {data}
+            <ImgWrap>
+               <Img src={data.img} />
+           </ImgWrap>
+           <TextWrap>
+                <SectionHeader size="large">
+                    {data.header}
+                    {/* header */}
+                </SectionHeader>
+                <SectionHeader size="medium">
+                    {data.name}
+                </SectionHeader>
+                {data.text}
+           </TextWrap>
        </SlideWrapper>
     )
 }
-export default Slide
+export default React.memo(Slide)
 
-
-// <ImgWrap>
-//                <Img src={img} />
-//            </ImgWrap>
-//            <TextWrap>
-//                 <SectionHeader size="large">
-//                     {header}
-//                 </SectionHeader>
-//                 <SectionHeader size="medium">
-//                     {name}
-//                 </SectionHeader>
-//                 {text}
-//            </TextWrap>

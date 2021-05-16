@@ -5,11 +5,26 @@ import rightArrow from '../../../shared/assests/Group 2350.svg'
 import leftArrow from '../../../shared/assests/Group 2416.svg'
 import { safeCompare, safeOperation } from '../../../shared/utils/functionsForFloats'
 
+import thierry from '../../../shared/assests/Image 1@2x.png'
+const text = 'Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada velit. Nullam et maximus lorem. Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada velit. Nullam et maximus lorem. Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada velit. Nullam et maximus lorem.'
+const header = 'Sports Expertise'
+const name = 'Thierry Henry '
+
 // because js have trouble with floating point numbers I created safe operations for it
 // and wrapped all float operation 
 const Slider = () => {
-    const data = ['slide 1', 'slide 2', 'slide 3', 'slide 4', "slide 5", 'slide 6', 'slide 7']
+    // const data = ['slide 1', 'slide 2', 'slide 3', 'slide 4', "slide 5", 'slide 6', 'slide 7']
 
+
+const data = [
+    {
+        img: thierry,
+        text: text,
+        header: header,
+        name: name
+    }
+]
+//     // const data =['s']
     const sleepTime = 5000
     const transitionStyle = 'all 0.5s'
     const shiftUnit = Math.floor((-100 / (data.length + 2)) * 100) / 100
@@ -22,9 +37,11 @@ const Slider = () => {
     const [sliderMoves, setSliderMoves] = useState(0)
 
     // slider timer
-    useEffect(() => {
-        setTimeout(() => goRight(), sleepTime)
-    }, [sliderMoves])
+    // useEffect(() => {
+    //     setTimeout(() => goRight(), sleepTime)
+    // }, [sliderMoves])
+
+    // useEffect(() => console.log('reload page'), [])
 
     const goLeft = () => {
         if (!isSliding) {
@@ -46,7 +63,8 @@ const Slider = () => {
 
     // if slide happend right and it was the last slide jump to the first slide
     // if slide happend left and it was the first slide jump to the last slide
-    const onTransitionEnd = () => {
+    const onTransitionEnd = (e) => {
+        e.preventDefault()
         if (direction === 1 && safeCompare(translate, 0, precision)){
             setTransition('none')
             setTranslate(safeOperation(data.length, shiftUnit, "*"))
@@ -59,20 +77,20 @@ const Slider = () => {
         setSliderMoves(sliderMoves + 1)
     }
 
-    
+    console.log(data, 'received')
     return (
         <Carousel>
             <SliderContainer 
                 translate={translate} 
                 transition={transition}
-                onTransitionEnd={onTransitionEnd}
+                onTransitionEnd={(e) => onTransitionEnd(e)}
                 width={data.length + 2}
                 >
-                    <Slide data={data[data.length-1]} width={-shiftUnit}></Slide>
+                    <Slide data={data[0]} width={-shiftUnit}></Slide>
                     {data.map((slide, i) => (
                         <Slide data={slide} width={-shiftUnit} key={i}></Slide>
                     ))}
-                    <Slide data={data[0]} width={-shiftUnit}></Slide>
+                    <Slide data={data[data.length - 1]} width={-shiftUnit}></Slide>
             </SliderContainer>
            <ButtonLeft  onClick={goLeft}><img src={leftArrow} alt="left"/></ButtonLeft>
            <ButtonRight onClick={goRight}><img src={rightArrow} alt="right"/></ButtonRight>

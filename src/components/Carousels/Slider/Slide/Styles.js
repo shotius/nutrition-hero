@@ -4,12 +4,12 @@ import { colors, font } from "../../../../shared/utils/styles";
 
 export const SlideWrapper = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
     flex: 1;
     height: 100%;
-    font-size: 100px;
+    padding: 0px 5px;
     ${props => (props.width 
         && css`
             flex-basis: ${props.width}%;

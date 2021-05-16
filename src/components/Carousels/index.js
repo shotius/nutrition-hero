@@ -6,11 +6,19 @@ const text = 'Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitud
 const header = 'Sports Expertise'
 const name = 'Thierry Henry '
 
+const data = [
+    {
+        img: thierry,
+        text: text,
+        header: header,
+        name: name
+    }
+]
 
 const Carousels = () => {
     return (
         <Wrapper>
-            <Slider img={thierry} text={text} header={header} name={name} />
+            <Slider data={data}/>
         </Wrapper>
     )
 }

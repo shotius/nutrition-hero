@@ -4,7 +4,6 @@ export const Carousel = styled.div`
     width: 100%;
     height: 720px;
     display: flex;
-    background: red;
     position: relative;
     overflow: hidden;
 `;
@@ -22,18 +21,6 @@ export const SliderContainer = styled.div`
     `)
     }
 `;
-
-// export const Slide = styled.div`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-basis: 20%;
-//     width: 20%;
-//     flex-shrink: 0;
-//     flex: 1;
-//     height: 100%;
-//     font-size: 100px;
-// `;
 
 const buttonStyle = css`
     display: flex;
