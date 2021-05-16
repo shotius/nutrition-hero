@@ -12,8 +12,8 @@ export const Carousel = styled.div`
 export const SliderContainer = styled.div`
     display: flex;
     height: 100%;
-    width: 500%;
     flex-shrink: 0;
+    ${props => (props.width && css`width: ${props.width*100}%`)};
     ${props => (props.transition && css`
             transition: ${props.transition};`)};
     ${props => (props.translate 
@@ -23,17 +23,17 @@ export const SliderContainer = styled.div`
     }
 `;
 
-export const Slide = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 20%;
-    width: 20%;
-    flex-shrink: 0;
-    flex: 1;
-    height: 100%;
-    font-size: 100px;
-`;
+// export const Slide = styled.div`
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-basis: 20%;
+//     width: 20%;
+//     flex-shrink: 0;
+//     flex: 1;
+//     height: 100%;
+//     font-size: 100px;
+// `;
 
 const buttonStyle = css`
     display: flex;

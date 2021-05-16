@@ -1,12 +1,20 @@
 
-import styled from "styled-components/macro";
-import { colors, font } from "../../../shared/utils/styles";
+import styled, { css } from "styled-components/macro";
+import { colors, font } from "../../../../shared/utils/styles";
 
 export const SlideWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 720px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    flex: 1;
+    height: 100%;
+    font-size: 100px;
+    ${props => (props.width 
+        && css`
+            flex-basis: ${props.width}%;
+            width: ${props.width}%;
+    `)};
 `;
 
 export const ImgWrap = styled.div`
