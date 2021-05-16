@@ -3,17 +3,17 @@ import Slide from './Slide'
 import { SliderContainer, ButtonLeft, ButtonRight, Carousel} from './Styles'
 import rightArrow from '../../../shared/assests/Group 2350.svg'
 import leftArrow from '../../../shared/assests/Group 2416.svg'
+import { safeCompare, safeOperation } from '../../../shared/utils/functionsForFloats'
 
+// because js have trouble with floating point numbers I created safe operations for it
+// and wrapped all float operation 
 const Slider = () => {
-    // we can enter slides
-    const data = ['slide 1', 'slide 2', 'slide 3']
+    const data = ['slide 1', 'slide 2', 'slide 3', 'slide 4', "slide 5", 'slide 6', 'slide 7']
 
-    const transitionStyle = 'all 0.5s'
     const sleepTime = 5000
+    const transitionStyle = 'all 0.5s'
     const shiftUnit = Math.floor((-100 / (data.length + 2)) * 100) / 100
-
-    // console.log(shiftUnit, "shft")
-    
+    const precision = -shiftUnit / 2
 
     const [transition, setTransition] = useState(transitionStyle)
     const [translate, setTranslate] = useState(shiftUnit)
@@ -22,16 +22,16 @@ const Slider = () => {
     const [sliderMoves, setSliderMoves] = useState(0)
 
     // slider timer
-    // useEffect(() => {
-    //     setTimeout(() => goRight(), sleepTime)
-    // }, [sliderMoves])
+    useEffect(() => {
+        setTimeout(() => goRight(), sleepTime)
+    }, [sliderMoves])
 
     const goLeft = () => {
         if (!isSliding) {
             setDirection(1)
             setIsSliding(true)
             setTransition(transitionStyle)
-            setTranslate(translate - shiftUnit )
+            setTranslate(safeOperation(translate,  shiftUnit, '-'))
         }
     }
 
@@ -39,7 +39,7 @@ const Slider = () => {
         if (!isSliding) {
             setDirection(-1)
             setIsSliding(true)
-            setTranslate(translate + shiftUnit)
+            setTranslate(safeOperation(translate, shiftUnit, "+"))
             setTransition(transitionStyle)
         }
     }
@@ -47,23 +47,19 @@ const Slider = () => {
     // if slide happend right and it was the last slide jump to the first slide
     // if slide happend left and it was the first slide jump to the last slide
     const onTransitionEnd = () => {
-        console.log(translate, 'translate')
-        console.log(shiftUnit, 'shift')
-        if (direction === 1 && translate === 0){
+        if (direction === 1 && safeCompare(translate, 0, precision)){
             setTransition('none')
-            setTranslate((data.length) * (shiftUnit))
+            setTranslate(safeOperation(data.length, shiftUnit, "*"))
         }
-        if (direction === -1 && translate === (data.length + 1) * shiftUnit){
+        if (direction === -1 && safeCompare(translate, safeOperation(data.length + 1,  shiftUnit, '*'), precision)) {
             setTransition("none")
             setTranslate(shiftUnit)
         }
         setIsSliding(false)
-        setSliderMoves(sliderMoves+1)
+        setSliderMoves(sliderMoves + 1)
     }
 
-    // const saveOperation = (a, b, operator ) => {
-    //     switch(operator) 
-    // }
+    
     return (
         <Carousel>
             <SliderContainer 
