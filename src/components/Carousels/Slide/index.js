@@ -1,8 +1,8 @@
 import React from 'react'
 import SectionHeader from '../../../shared/components/SectionHeader'
 import { sliderStyle } from '../../../shared/utils/styles'
-import { ImgWrap, SlideWrapper, TextWrap, Img} from './Styles'
-
+import { Img, TextWrap} from '../../../Styles'
+import { ImgWrap, SlideWrapper} from './Styles'
 
 const Slide = ({ slide, width}) => {
     return (

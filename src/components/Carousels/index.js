@@ -6,7 +6,7 @@ import { sliderStyle } from '../../shared/utils/styles'
 import thierry from '../../shared/assests/Image 1@2x.png'
 import lady from '../../shared/assests/slide-2.png'
 // slider 2 pictures
-import saltMan from '../../shared/assests/Image 3.png'
+import saltMan from '../../shared/assests/Image 3@2x.png'
 import pete from '../../shared/assests/pete.png'
 import contribMan from '../../shared/assests/contribMan.png'
 

@@ -1,17 +1,17 @@
 import styled from "styled-components";
 import { Wrapper } from '../../Styles'
 
-export const FourthSectionWrap = styled.div`
-    width: 100%;
-    padding: 90px 0px;
-`;
-
-export const InfoWrap = styled(Wrapper)`
+export const FourthSectionWrap = styled(Wrapper)`
     display: flex;
-    
-    background: red;
+    padding: 90px 0px;
+    justify-content: space-around;
 `;
 
 export const ImgWrapper = styled.div`
-    
+    flex-basis: 503px;
+    height: 567px;
+`;
+
+export const AppStoreWrap = styled.div`
+    margin-top: 70px;
 `;
