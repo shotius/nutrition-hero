@@ -23,3 +23,8 @@ export const mixins = {
         user-select: none;
     `
 }
+
+export const sliderStyle = {
+    pictureRight: 'picture-right',
+    pictureLeft: 'picture-left'
+}
