@@ -79,6 +79,7 @@ const Slider = ({slides}) => {
     }
 
     const goToSlide = (slide) => {
+        setTransition(transitionStyle)
         setSliderMoves(sliderMoves + 1)
         setTranslate(slide * shiftUnit)
     }
