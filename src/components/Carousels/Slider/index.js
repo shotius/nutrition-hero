@@ -10,7 +10,7 @@ import { safeCompare, safeOperation } from '../../../shared/utils/functionsForFl
 // slides are aligned [n, 1, 2, 3, 4..., n, 1]
 // and when slider goes to the last slide it jumps to the first and wise versa
 const Slider = ({data}) => {
-    const sleepTime = 5000
+    const sleepTime = 3000
     const transitionStyle = 'all 0.5s'
     const shiftUnit = Math.floor((-100 / (data.length + 2)) * 100) / 100
     const precision = -shiftUnit / 2
@@ -23,7 +23,8 @@ const Slider = ({data}) => {
 
     // slider timer
     useEffect(() => {
-        setTimeout(() => goRight(), sleepTime)
+        const timer = setTimeout(() => goRight(), sleepTime)
+        return () => clearTimeout(timer)
     }, [sliderMoves])
 
 
@@ -78,6 +79,7 @@ const Slider = ({data}) => {
     }
 
     const goToSlide = (slide) => {
+        setSliderMoves(sliderMoves + 1)
         setTranslate(slide * shiftUnit)
     }
 
