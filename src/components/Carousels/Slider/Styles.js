@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components/macro";
-import { mixins } from "../../../shared/utils/styles";
+import { mixins, colors} from "../../../shared/utils/styles";
 
 export const Carousel = styled.div`
     width: 100%;
@@ -68,17 +68,16 @@ display: flex;
 `;
 
 export const Dot = styled.button`
- width: 5px;
   height: 12px;
+  width: 5px;
   border: none;
   margin: 0 8px;
-  background-color: #AF8E9A;
   border-radius: 6px;
+  background-color: ${colors.lightPurple};
   ${mixins.clickable};
   ${props => (props.isActive 
     && css`
-        background-color: white;
-        border: 1px solid #AF8E9A;`)}
+        background-color: ${colors.darkPurple}`)};
   &:active, &:hover {
       transform: scale(1.2);
   }

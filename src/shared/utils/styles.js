@@ -2,6 +2,7 @@ import {css} from 'styled-components/macro'
 
 export const colors = {
     darkPurple: '#80334B',
+    lightPurple: '#AF8E9A',
     darkBlue: '#182849',
     Grey: '#676069',
     dirtyWhite: '#EFEFF4',

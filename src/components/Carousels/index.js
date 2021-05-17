@@ -23,7 +23,7 @@ const Carousels = () => {
     return (
         <Wrapper>
             <Slider data={data}/>
-            <Slider data={data}/>
+            {/* <Slider data={data}/> */}
         </Wrapper>
     )
 }
