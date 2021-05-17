@@ -4,7 +4,7 @@ import { Wrapper } from '../../Styles'
 export const FourthSectionWrap = styled(Wrapper)`
     display: flex;
     padding: 90px 0px;
-    justify-content: space-around;
+    justify-content: space-between;
 `;
 
 export const ImgWrapper = styled.div`

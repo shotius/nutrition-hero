@@ -9,7 +9,7 @@ import workout_3 from '../../shared/assests/yogalady.jpg'
 import food_1 from '../../shared/assests/Rectangle 1473.png'
 
 
-const SectionTwo = () => {
+const SectionTwo = React.forwardRef((props,  ref) => {
     const data = [
         {
             img: workout_1,
@@ -29,11 +29,11 @@ const SectionTwo = () => {
     ]
     const [activeIndex, setActiveIndex] = useState(0)
 
-    return (
+    return (    
         <SectionTwoWrap>
             <Wrapper>
                 <ExerciseWrap>
-                    <SectionHeader size="large" flexPosition="center">
+                    <SectionHeader exercisesRef={exercisesRef} size="large" flexPosition="center">
                         Exercise
                     </SectionHeader>
                     <TagLinks flexPosition="center">
@@ -75,5 +75,5 @@ const SectionTwo = () => {
             </Wrapper>
         </SectionTwoWrap>
     )
-}
+})
 export default SectionTwo
