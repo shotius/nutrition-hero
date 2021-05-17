@@ -9,10 +9,10 @@ import { safeCompare, safeOperation } from '../../../shared/utils/functionsForFl
 // and wrapped all float operation 
 // slides are aligned [n, 1, 2, 3, 4..., n, 1]
 // and when slider goes to the last slide it jumps to the first and wise versa
-const Slider = ({data}) => {
+const Slider = ({slides}) => {
     const sleepTime = 3000
     const transitionStyle = 'all 0.5s'
-    const shiftUnit = Math.floor((-100 / (data.length + 2)) * 100) / 100
+    const shiftUnit = Math.floor((-100 / (slides.length + 2)) * 100) / 100
     const precision = -shiftUnit / 2
 
     const [transition, setTransition] = useState(transitionStyle)
@@ -51,9 +51,9 @@ const Slider = ({data}) => {
     const onTransitionEnd = () => {
         if (direction === 1 && safeCompare(translate, 0, precision)){
             setTransition('none')
-            setTranslate(safeOperation(data.length, shiftUnit, "*"))
+            setTranslate(safeOperation(slides.length, shiftUnit, "*"))
         }
-        if (direction === -1 && safeCompare(translate, safeOperation(data.length + 1,  shiftUnit, '*'), precision)) {
+        if (direction === -1 && safeCompare(translate, safeOperation(slides.length + 1,  shiftUnit, '*'), precision)) {
             setTransition("none")
             setTranslate(shiftUnit)
         }
@@ -68,10 +68,10 @@ const Slider = ({data}) => {
         const nShift = safeOperation(translate, shiftUnit, '/')
         let activeSlide;
         
-        if (nShift > data.length) {
+        if (nShift > slides.length) {
             activeSlide = 1
         } else if (nShift < 1) {
-            activeSlide = data.length
+            activeSlide = slides.length
         } else {
             activeSlide = nShift
         }
@@ -89,19 +89,19 @@ const Slider = ({data}) => {
                 translate={translate} 
                 transition={transition}
                 onTransitionEnd={onTransitionEnd}
-                width={data.length + 2}
+                width={slides.length + 2}
                 >
-                    <Slide data={data[data.length - 1]} width={-shiftUnit}></Slide>
-                    {data.map((slide, i) => (
-                        <Slide data={slide} width={-shiftUnit} key={i}></Slide>
+                    <Slide slide={slides[slides.length - 1]} width={-shiftUnit}></Slide>
+                    {slides.map((slide, i) => (
+                        <Slide slide={slide} width={-shiftUnit} key={i}></Slide>
                     ))}
-                    <Slide data={data[0]} width={-shiftUnit}></Slide>
+                    <Slide slide={slides[0]} width={-shiftUnit}></Slide>
            </SliderContainer>
            <Controls>
                 <ButtonLeft  onClick={goLeft}><img src={leftArrow} alt="left"/></ButtonLeft>
                 <ButtonRight onClick={goRight}><img src={rightArrow} alt="right"/></ButtonRight>
                 <Dots>
-                    {data.map((slide, i) => {
+                    {slides.map((slide, i) => {
                         // we pass i+1 becase first slide is actualy on the second position
                         const active = isActive(i+1)
                         return (

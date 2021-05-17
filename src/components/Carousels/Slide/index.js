@@ -3,21 +3,21 @@ import SectionHeader from '../../../shared/components/SectionHeader'
 import { ImgWrap, SlideWrapper, TextWrap, Img} from './Styles'
 
 
-const Slide = ({ data, width}) => {
+const Slide = ({ slide, width}) => {
     return (
        <SlideWrapper width={width}>
             <ImgWrap>
-               <Img src={data.img} />
+               <Img src={slide.img} />
            </ImgWrap>
            <TextWrap>
                 <SectionHeader size="large">
-                    {data.header}
+                    {slide.header}
                     {/* header */}
                 </SectionHeader>
                 <SectionHeader size="medium">
-                    {data.name}
+                    {slide.name}
                 </SectionHeader>
-                {data.text}
+                {slide.text}
            </TextWrap>
        </SlideWrapper>
     )

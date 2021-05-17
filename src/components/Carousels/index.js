@@ -4,7 +4,7 @@ import { Wrapper } from '../../Styles'
 import thierry from '../../shared/assests/Image 1@2x.png'
 import lady from '../../shared/assests/slide-2.png'
 
-const data = [
+const Carousel_1 = [
     {
         img: thierry,
         name: 'Thierry Henry ',
@@ -22,7 +22,7 @@ const data = [
 const Carousels = () => {
     return (
         <Wrapper>
-            <Slider data={data}/>
+            <Slider slides={Carousel_1}/>
             {/* <Slider data={data}/> */}
         </Wrapper>
     )
