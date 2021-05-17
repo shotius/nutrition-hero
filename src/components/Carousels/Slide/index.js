@@ -5,33 +5,14 @@ import { ImgWrap, SlideWrapper, TextWrap, Img} from './Styles'
 
 
 const Slide = ({ slide, width}) => {
-    const PictureRight = () => (
+    return (
         <SlideWrapper width={width}>
-            <TextWrap>
-                <SectionHeader size="large">
-                    {slide.header}
-                    {/* header */}
-                </SectionHeader>
-                <SectionHeader size="medium">
-                    {slide.name}
-                </SectionHeader>
-                {slide.text}
-            </TextWrap>
-            <ImgWrap>
-                <Img src={slide.img} />
-            </ImgWrap>
-        </SlideWrapper>
-    )
-    
-    const PictureLeft = () => (
-        <SlideWrapper width={width}>
-            <ImgWrap>
+            <ImgWrap order={slide.align === sliderStyle.pictureRight ? 1 : 0}>
                <Img src={slide.img} />
            </ImgWrap>
            <TextWrap>
                 <SectionHeader size="large">
                     {slide.header}
-                    {/* header */}
                 </SectionHeader>
                 <SectionHeader size="medium">
                     {slide.name}
@@ -40,7 +21,6 @@ const Slide = ({ slide, width}) => {
            </TextWrap>
        </SlideWrapper>
     )
-    return slide.align === sliderStyle.pictureLeft ? <PictureLeft /> : <PictureRight />
 }
 export default React.memo(Slide)
 

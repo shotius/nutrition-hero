@@ -1,11 +1,15 @@
 import React from 'react'
-import { Wrapper } from '../../Styles'
+import { FourthSectionWrap, InfoWrap } from './Styles'
 
 const ForthSection = () => {
     return (
-        <Wrapper>
-        <h1>section four</h1>
-        </Wrapper>
+        <FourthSectionWrap>
+            <InfoWrap>
+        <div>asdfasdf</div>
+        <div>asdfasdf</div>
+        <div>asdfasdf</div>
+            </InfoWrap>
+         </FourthSectionWrap>
     )
 }
 export default ForthSection

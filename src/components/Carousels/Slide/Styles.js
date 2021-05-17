@@ -21,6 +21,9 @@ export const SlideWrapper = styled.div`
 export const ImgWrap = styled.div`
     width: 50%;
     height: 100%;
+    ${props => (props.order 
+        && css`
+            order: ${props.order}`)};
 `;
 
 export const TextWrap = styled.div`

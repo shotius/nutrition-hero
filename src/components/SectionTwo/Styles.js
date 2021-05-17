@@ -37,8 +37,8 @@ export const TagInfoWrap = styled.div`
 
 export const ImageWrapper = styled.div`
     width: 50%;
-    max-height: 319px;
-    max-width: 494px;
+    height: 271px;
+    max-width: 409px;
 `;
 
 export const TagPicture = styled.img.attrs(props => ({
