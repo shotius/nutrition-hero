@@ -22,9 +22,9 @@ const Slider = ({data}) => {
     const [sliderMoves, setSliderMoves] = useState(0)
 
     // slider timer
-    // useEffect(() => {
-    //     setTimeout(() => goRight(), sleepTime)
-    // }, [sliderMoves])
+    useEffect(() => {
+        setTimeout(() => goRight(), sleepTime)
+    }, [sliderMoves])
 
 
     const goLeft = () => {
