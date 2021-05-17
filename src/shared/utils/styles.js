@@ -5,9 +5,10 @@ export const colors = {
     lightPurple: '#AF8E9A',
     darkBlue: '#182849',
     Grey: '#676069',
+    darkgrey: '#b2b2b2', 
     dirtyWhite: '#EFEFF4',
     white: "#fff",
-    black: "#000"
+    black: "#000",
 }
 
 export const font = {

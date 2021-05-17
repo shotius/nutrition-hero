@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 import Button from "../../shared/components/Button";
 import { colors, font, mixins } from "../../shared/utils/styles";
 import { Wrapper } from "../../Styles";
+import { PageLogo } from "../Header/Styles";
 
 export const FooterWrapper = styled.div`
     margin-top: 10px;
@@ -24,12 +25,12 @@ export const GetStart = styled(Wrapper)`
     display: flex;
 `;
 
-export const FooterInfoWrap = styled.div`
+export const FooterInfoWrap = styled(Wrapper)`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
     padding-top: 40px;
-    height: 237px;
 `;
 
 export const Text = styled.p`
@@ -43,6 +44,7 @@ export const StyledButton = styled(Button)`
 `;
 
 export const Link = styled.a`
+    /* flex-basis: ; */
     display: block;
     color: ${colors.Grey};
     ${font.size(14)};
@@ -55,4 +57,16 @@ export const LinksWrap = styled.div`
     line-height: 25px;
     ${font.bold};
     ${font.size(14)};
+`;
+
+export const LogoWrap = styled.div`
+    flex-basis: 100%;
+    margin: 15px 0px;
+`;
+
+export const Copyright = styled.small`
+    margin-bottom: 23px;
+    color: ${colors.darkgrey};
+    ${font.size(12)}
+    ${font.regular};
 `;
