@@ -1,4 +1,5 @@
 import styled, {css} from "styled-components/macro";
+import { mixins } from "../../../shared/utils/styles";
 
 export const Carousel = styled.div`
     width: 100%;
@@ -48,4 +49,37 @@ export const ButtonRight = styled.button`
     ${buttonStyle}
     right: 130px;
     
+`;
+
+export const Controls = styled.div`
+
+`;
+
+export const Dots = styled.div`
+display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+`;
+
+export const Dot = styled.button`
+ width: 5px;
+  height: 12px;
+  border: none;
+  margin: 0 8px;
+  background-color: #AF8E9A;
+  border-radius: 6px;
+  ${mixins.clickable};
+  ${props => (props.isActive 
+    && css`
+        background-color: white;
+        border: 1px solid #AF8E9A;`)}
+  &:active, &:hover {
+      transform: scale(1.2);
+  }
 `;

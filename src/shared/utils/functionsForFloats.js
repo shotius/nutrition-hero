@@ -8,6 +8,8 @@ export const safeOperation = (a, b, operator ) => {
             return Math.floor((a + b) * 100)/100
         case "-":
             return Math.floor((a -b ) * 100)/100
+        default:
+            return null
     }
 }
 

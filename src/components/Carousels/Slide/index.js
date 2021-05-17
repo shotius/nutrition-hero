@@ -1,10 +1,9 @@
 import React from 'react'
-import SectionHeader from '../../../../shared/components/SectionHeader'
+import SectionHeader from '../../../shared/components/SectionHeader'
 import { ImgWrap, SlideWrapper, TextWrap, Img} from './Styles'
 
 
 const Slide = ({ data, width}) => {
-    console.log('data in slide', data)
     return (
        <SlideWrapper width={width}>
             <ImgWrap>

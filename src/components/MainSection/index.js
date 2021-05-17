@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../../shared/components/Button';
-import { ImgBackground, MainSectionWrap, PageHeading, ShortDescription } from './Styles';
+import {  MainSectionWrap, PageHeading, ShortDescription } from './Styles';
 
 
 const MainSection = () => {

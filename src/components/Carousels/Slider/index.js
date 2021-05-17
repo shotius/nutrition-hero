@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Slide from './Slide'
-import { SliderContainer, ButtonLeft, ButtonRight, Carousel} from './Styles'
+import Slide from '../Slide'
+import { SliderContainer, ButtonLeft, ButtonRight, Carousel, Dots, Dot, Controls} from './Styles'
 import rightArrow from '../../../shared/assests/Group 2350.svg'
 import leftArrow from '../../../shared/assests/Group 2416.svg'
 import { safeCompare, safeOperation } from '../../../shared/utils/functionsForFloats'
@@ -22,9 +22,9 @@ const Slider = ({data}) => {
     const [sliderMoves, setSliderMoves] = useState(0)
 
     // slider timer
-    // useEffect(() => {
-    //     setTimeout(() => goRight(), sleepTime)
-    // }, [sliderMoves])
+    useEffect(() => {
+        setTimeout(() => goRight(), sleepTime)
+    }, [sliderMoves])
 
 
     const goLeft = () => {
@@ -60,6 +60,27 @@ const Slider = ({data}) => {
         setSliderMoves(sliderMoves + 1)
     }
 
+    // this function returns true or false
+    // checking how many shift were made, if slide received in the argument is equal to 
+    // actual slide were is slider in the moment - true, else - false
+    const isActive = (i) => {
+        const nShift = safeOperation(translate, shiftUnit, '/')
+        let activeSlide;
+        
+        if (nShift > data.length) {
+            activeSlide = 1
+        } else if (nShift < 1) {
+            activeSlide = data.length
+        } else {
+            activeSlide = nShift
+        }
+        return activeSlide === i
+    }
+
+    const goToSlide = (slide) => {
+        setTranslate(slide * shiftUnit)
+    }
+
     return (
         <Carousel>
             <SliderContainer 
@@ -73,9 +94,24 @@ const Slider = ({data}) => {
                         <Slide data={slide} width={-shiftUnit} key={i}></Slide>
                     ))}
                     <Slide data={data[0]} width={-shiftUnit}></Slide>
-            </SliderContainer>
-           <ButtonLeft  onClick={goLeft}><img src={leftArrow} alt="left"/></ButtonLeft>
-           <ButtonRight onClick={goRight}><img src={rightArrow} alt="right"/></ButtonRight>
+           </SliderContainer>
+           <Controls>
+                <ButtonLeft  onClick={goLeft}><img src={leftArrow} alt="left"/></ButtonLeft>
+                <ButtonRight onClick={goRight}><img src={rightArrow} alt="right"/></ButtonRight>
+                <Dots>
+                    {data.map((slide, i) => {
+                        // we pass i+1 becase first slide is actualy on the second position
+                        const active = isActive(i+1)
+                        return (
+                            <Dot 
+                                key={i}
+                                isActive={active} 
+                                onClick={() => goToSlide(i+1)}
+                                />
+                        )
+                    })}
+                </Dots>
+           </Controls>
        </Carousel>
     )
 }
