@@ -41,7 +41,6 @@ const SectionTwo = () => {
                         <Button type="tagLink" isActive={activeIndex === 1 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(1)}>Home</Button>
                         <Button type="tagLink" isActive={activeIndex === 2 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(2)}>Yoga</Button>
                     </TagLinks>
-                    {console.log('data')}
                     <TagInfoWrap>
                         <ImageWrapper width="271px">
                             <TagPicture src={data[activeIndex].img} />

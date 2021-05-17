@@ -4,7 +4,6 @@ import { ImgWrap, SlideWrapper, TextWrap, Img} from './Styles'
 
 
 const Slide = ({ data, width}) => {
-    console.log('data in slide', data)
     return (
        <SlideWrapper width={width}>
             <ImgWrap>

@@ -60,8 +60,25 @@ const Slider = ({data}) => {
         setSliderMoves(sliderMoves + 1)
     }
 
-    const isActive = (n) => {
-        return true
+    // this function returns true or false
+    // checking how many shift were made, if slide received in the argument is equal to 
+    // actual slide were is slider in the moment - true, else - false
+    const isActive = (i) => {
+        const nShift = safeOperation(translate, shiftUnit, '/')
+        let activeSlide;
+        
+        if (nShift > data.length) {
+            activeSlide = 1
+        } else if (nShift < 1) {
+            activeSlide = data.length
+        } else {
+            activeSlide = nShift
+        }
+        return activeSlide === i
+    }
+
+    const goToSlide = (slide) => {
+        setTranslate(slide * shiftUnit)
     }
 
     return (
@@ -82,9 +99,17 @@ const Slider = ({data}) => {
                 <ButtonLeft  onClick={goLeft}><img src={leftArrow} alt="left"/></ButtonLeft>
                 <ButtonRight onClick={goRight}><img src={rightArrow} alt="right"/></ButtonRight>
                 <Dots>
-                    {data.map((slide, i) => (
-                        <Dot isActive={() => isActive(i)}></Dot>
-                    ))}
+                    {data.map((slide, i) => {
+                        // we pass i+1 becase first slide is actualy on the second position
+                        const active = isActive(i+1)
+                        return (
+                            <Dot 
+                                key={i}
+                                isActive={active} 
+                                onClick={() => goToSlide(i+1)}
+                                />
+                        )
+                    })}
                 </Dots>
            </Controls>
        </Carousel>
