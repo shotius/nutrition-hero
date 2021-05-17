@@ -1,10 +1,10 @@
-import Header from './components/Header'
-import MainSection from './components/MainSection';
+import Header from './sections/Header'
+import MainSection from './sections/MainSection';
 import NormalizeStyle from './NormalizeStyle';
-import SectionTwo from './components/SectionTwo'
-import Carousels from './components/Carousels';
-import Footer from './components/Footer';
-import ForthSection from './components/ForthSection';
+import SectionTwo from './sections/SecondSection'
+import Carousels from './sections/Carousels';
+import Footer from './sections/Footer';
+import ForthSection from './sections/ForthSection';
 
 function App() {
   return (
