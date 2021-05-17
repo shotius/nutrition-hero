@@ -2,7 +2,6 @@ import React from 'react'
 import { FooterInfoWrap, FooterWrapper, GetStart, GetStartedWrap, Text, StyledButton, Link, LinksWrap, Logo, LogoWrap, Copyright } from './Styles'
 import appStorImg from '../../shared/assests/download-on-the-app-store-apple-1.svg'
 import googlePlayImg from '../../shared/assests/google-play-badge-1.svg'
-import logo from '../../shared/assests/Logo Black Full-1.svg'
 import { PageLogo } from '../Header/Styles'
 
 const Footer = () => {

@@ -1,11 +1,10 @@
 import React from 'react'
 import Button from '../../shared/components/Button'
-import { Wrapper } from '../../Styles'
-import { Wrap, PageLogo, NavBar } from './Styles'
+import { Wrap, PageLogo, NavBar, Sticky } from './Styles'
 
 const Header = () => {
     return (
-        <Wrapper>
+        <Sticky>
             <Wrap>
                 <PageLogo />
                 <NavBar >
@@ -17,7 +16,7 @@ const Header = () => {
                     <Button type="login">login</Button>
                 </NavBar>
             </Wrap>
-        </Wrapper>
+        </Sticky>
     )
 }
 export default Header

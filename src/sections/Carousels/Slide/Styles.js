@@ -1,7 +1,5 @@
 
 import styled, { css } from "styled-components/macro";
-import { font } from '../../../shared/utils/styles'
-
 
 export const SlideWrapper = styled.div`
     display: flex;

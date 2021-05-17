@@ -2,7 +2,6 @@ import styled from "styled-components/macro";
 import Button from "../../shared/components/Button";
 import { colors, font, mixins } from "../../shared/utils/styles";
 import { Wrapper } from "../../Styles";
-import { PageLogo } from "../Header/Styles";
 
 export const FooterWrapper = styled.div`
     margin-top: 10px;

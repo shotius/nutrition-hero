@@ -1,9 +1,19 @@
 import styled from 'styled-components/macro'
 import img from '../../shared/assests/Logo Black Full-1.svg'
 import { mixins } from '../../shared/utils/styles';
+import { Wrapper } from '../../Styles';
 
 
-export const Wrap = styled.div`
+export const Sticky = styled.div`
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    background: white;
+    z-index: 1000;
+`;
+export const Wrap = styled(Wrapper)`
+    display: relative;
     height: 80px;
     display: flex;
     background: white;
