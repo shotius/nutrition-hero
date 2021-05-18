@@ -8,7 +8,7 @@ export const FourthSectionWrap = styled(Wrapper)`
 `;
 
 export const ImgWrapper = styled.div`
-    flex-basis: 503px;
+    flex: 0.9;
     height: 567px;
 `;
 
