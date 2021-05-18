@@ -12,7 +12,7 @@ export const MainSectionWrap = styled.div`
     height: calc(100vh - 80px);
     background-image: url('${img}');
     background-repeat: no-repeat;
-    background-size: 112%;
+    background-size: cover;
 `;
 
 export const PageHeading = styled.h1`
@@ -34,6 +34,11 @@ export const ShortDescription = styled.p`
 `;
 
 export const SignUpBtn = styled(StyledButton)`
+        position: fixed;
+        bottom: 10px;;
+        z-index: 1000;
+        flex: 1;
     @media ${devices.tablet} {
+        position: relative;
     }
 `;
