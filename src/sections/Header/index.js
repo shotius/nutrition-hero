@@ -1,6 +1,7 @@
 import React from 'react'
-import { Wrap, PageLogo, NavBar, Sticky, NavLink, Menu, SignUpBtn, LoginBtn} from './Styles'
-import menu from '../../shared/assests/menu.svg'
+import { Wrap, PageLogo, NavBar, Sticky, NavLink, MenuIconWrap, SignUpBtn, LoginBtn} from './Styles'
+import {Menu} from '@styled-icons/boxicons-regular/Menu'
+
 
 const Header = ({exercisesRef, nutritionRef}) => {
     return (
@@ -14,7 +15,9 @@ const Header = ({exercisesRef, nutritionRef}) => {
                     <NavLink type="navLink" isActive={false} onClick={() => {}}>app</NavLink>
                     <SignUpBtn type="primary" onClick={() => {}}>Sign up</SignUpBtn>
                     <LoginBtn type="login" onClick={() => {}}>login</LoginBtn>
-                    <Menu src={menu}/>
+                    <MenuIconWrap>
+                        <Menu size="32"/>
+                    </MenuIconWrap>
                 </NavBar>
             </Wrap>
         </Sticky>

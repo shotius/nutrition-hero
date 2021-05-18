@@ -68,14 +68,12 @@ export const LoginBtn = styled(StyledButton)`
     ${linkShowHide}
 `;
 
-export const Menu = styled.img.attrs(props => ({
-    src: props.src
-}))`
-        display: flex;
+export const MenuIconWrap = styled.div`
         width: 27px;
         height: 26px;
         font-size: 22px;
         line-height: 26px;
+        ${font.compact};
     @media ${devices.tablet} {
         display: none;
     }
