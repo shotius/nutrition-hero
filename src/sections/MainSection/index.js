@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../../shared/components/Button';
-import {  MainSectionWrap, PageHeading, ShortDescription } from './Styles';
+import {  MainSectionWrap, PageHeading, ShortDescription, SignUpBtn } from './Styles';
 
 
 const MainSection = () => {
@@ -12,7 +12,7 @@ const MainSection = () => {
             <ShortDescription>
             A short description works best
             </ShortDescription>
-            <Button type="primary" width="324px">Start now</Button>
+            <SignUpBtn type="primary" width="324px">Start now</SignUpBtn>
         </MainSectionWrap>
     )
 }

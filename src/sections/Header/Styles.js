@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 import img from '../../shared/assests/Logo Black Full-1.svg'
-import { mixins } from '../../shared/utils/styles';
+import { StyledButton } from '../../shared/components/Button/Styles';
+import { devices, mixins } from '../../shared/utils/styles';
 import { Wrapper } from '../../Styles';
 
 
@@ -17,6 +18,7 @@ export const Wrap = styled(Wrapper)`
     height: 80px;
     display: flex;
     background: white;
+    justify-content: space-between;
 `;
 
 export const PageLogo = styled.img.attrs({
@@ -30,7 +32,32 @@ export const PageLogo = styled.img.attrs({
 
 export const  NavBar = styled.div`
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    margin-left: auto;
-    justify-content: space-between;
+    flex: 0.8;
+    @media ${devices.mobile} {
+    }
+`;
+
+export const NavLink = styled(StyledButton)`
+    padding: 0px 16px;
+    @media ${devices.mobile} {
+        display: none
+    } 
+`;
+export const SignUpBtn = styled(StyledButton)`
+     @media ${devices.mobile} {
+        display: none
+    } 
+`;
+
+export const Menu = styled.img.attrs(props => ({
+    src: props.src
+}))`
+    display: none;
+    width: 27px;
+    height: 26px;
+    @media ${devices.mobile} {
+        display: block;
+    }
 `;
