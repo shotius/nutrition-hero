@@ -12,9 +12,10 @@ export const colors = {
 }
 
 export const font = {
-    bold: `font-family: 'Lato', sans-serif; font-weight: bold;`,
-    medium: `font-family: 'Lato', sans-serif; font-weight: 500;`,
-    regular: `font-family: 'Lato', sans-serif; font-weight: normal;`,
+    bold: `font-family: 'Lato Bold';`,
+    medium: `font-family: 'Lato Medium'; font-weight: 400;`,
+    black: `font-family: 'Lato Black'`,
+    regular: `font-family: 'Lato Regular';`,
     size: (size) => `font-size: ${size}px;`
 }
 

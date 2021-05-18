@@ -3,7 +3,6 @@ import { font } from "../../utils/styles";
 
 export const StyledHeader = styled.h1`
     display: flex;
-    ${font.bold};
     ${props => (props.flexPosition && css`justify-content: ${props.flexPosition}`)};
     ${props => (props.color && css`color: ${props.color}`)};
     ${props => headerTypes[props.size]};
@@ -12,6 +11,7 @@ export const StyledHeader = styled.h1`
 const headerTypes = {
     large: css`
         ${font.size(42)};
+        ${font.bold};
     `,
     medium: css`
         padding: 10px 0px;

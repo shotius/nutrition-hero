@@ -48,6 +48,7 @@ const btmLine = css`
 const navLink = css`
   text-transform: uppercase;
   margin-top: 7px;
+  line-height: 17px;
   ${btmLine}
   
 `;

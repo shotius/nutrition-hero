@@ -51,6 +51,9 @@ const linkShowHide = css`
 export const NavLink = styled(StyledButton)`
     ${linkShowHide}
     padding: 0px 16px;
+    &:hover {
+        ${font.black}
+    }
 `;
 
 export const SignUpBtn = styled(StyledButton)`
@@ -63,9 +66,6 @@ export const LoginBtn = styled(StyledButton)`
     padding-left: 16px;
     color: ${colors.darkPurple};
     ${linkShowHide}
-    &:hover {
-      ${font.bold};
-    }
 `;
 
 export const Menu = styled.img.attrs(props => ({
@@ -74,6 +74,8 @@ export const Menu = styled.img.attrs(props => ({
         display: flex;
         width: 27px;
         height: 26px;
+        font-size: 22px;
+        line-height: 26px;
     @media ${devices.tablet} {
         display: none;
     }
