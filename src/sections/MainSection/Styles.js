@@ -35,7 +35,7 @@ export const ShortDescription = styled.p`
 `;
 
 export const SignUpBtn = styled(StyledButton)`
-    @media ${devices.mobile} {
+    @media ${devices.tablet} {
         display: none;
         width: 0px;
     }

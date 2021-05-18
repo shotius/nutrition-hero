@@ -23,7 +23,7 @@ const Footer = () => {
                     <Link>Exercise</Link>
                     <Link>Nutritions</Link>
                     <Link>Expertise</Link>
-                    <Link>Mobile App</Link>
+                    <Link>tablet App</Link>
                 </LinksWrap>
                 <LinksWrap>
                     company

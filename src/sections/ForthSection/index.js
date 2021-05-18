@@ -2,7 +2,7 @@ import React from 'react'
 import { FourthSectionWrap, ImgWrapper, AppStoreWrap } from './Styles'
 import { Img, TextWrap } from '../../Styles'
 import SectionHeader from '../../shared/components/SectionHeader'
-import mobileImg from '../../shared/assests/Mobile App@2x.png'
+import tabletImg from '../../shared/assests/Mobile App@2x.png'
 import appStorImg from '../../shared/assests/download-on-the-app-store-apple-1.svg'
 import googlePlayImg from '../../shared/assests/google-play-badge-1.svg'
 
@@ -10,7 +10,7 @@ const ForthSection = () => {
     return (
         <FourthSectionWrap>
             <ImgWrapper>
-                <Img src={mobileImg} />
+                <Img src={tabletImg} />
             </ImgWrapper>
             <TextWrap>
                 <SectionHeader size="large">

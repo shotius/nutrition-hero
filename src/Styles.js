@@ -3,10 +3,13 @@ import { font, devices } from "./shared/utils/styles";
 
 export const Wrapper = styled.div`
     padding: 0px 16px;
-    @media (min-width: 790px) {
-        width: 75%;
-        max-width: 1100px;
-        margin: 0 auto;
+    margin: 0 auto;
+    @media ${devices.tablet} {
+        padding: 0px;
+        width: 700px;
+    }
+    @media ${devices.laptop} {
+        width: 1000px;
     } 
 `;
 

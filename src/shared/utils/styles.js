@@ -30,6 +30,12 @@ export const sliderStyle = {
     pictureLeft: 'picture-left'
 }
 
+const sizes = {
+    tablet: "790px",
+    laptop: "1164px"
+}
+
 export const devices = {
-    mobile: `(max-width: 790px)`
+    tablet: `(min-width: ${sizes.tablet})`,
+    laptop: `(min-width: ${sizes.laptop})`
 }

@@ -19,6 +19,8 @@ export const Wrap = styled(Wrapper)`
     display: flex;
     background: white;
     justify-content: space-between;
+    /* background: red;  */
+    /* @media (min) */
 `;
 
 export const PageLogo = styled.img.attrs({
@@ -35,29 +37,29 @@ export const  NavBar = styled.div`
     justify-content: flex-end;
     align-items: center;
     flex: 0.8;
-    @media ${devices.mobile} {
-    }
 `;
 
 export const NavLink = styled(StyledButton)`
-    padding: 0px 16px;
-    @media ${devices.mobile} {
-        display: none
+    display: none;
+    @media ${devices.tablet} {
+        padding: 0px 16px;
+        display: block;
     } 
 `;
 export const SignUpBtn = styled(StyledButton)`
-     @media ${devices.mobile} {
-        display: none
+    display: none;
+    @media ${devices.tablet} {
+        display: flex;
     } 
 `;
 
 export const Menu = styled.img.attrs(props => ({
     src: props.src
 }))`
-    display: none;
-    width: 27px;
-    height: 26px;
-    @media ${devices.mobile} {
-        display: block;
+        display: flex;
+        width: 27px;
+        height: 26px;
+    @media ${devices.tablet} {
+        display: none;
     }
 `;
