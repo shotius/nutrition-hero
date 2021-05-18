@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../../shared/components/Button';
 import {  MainSectionWrap, PageHeading, ShortDescription, SignUpBtn } from './Styles';
 
 

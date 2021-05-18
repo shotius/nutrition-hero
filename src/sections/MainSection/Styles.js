@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import img from  '../../shared/assests/Large Hero.png'
+import img from  '../../shared/assests/Large Hero@2x.png'
 import { StyledButton } from "../../shared/components/Button/Styles";
 import { devices, font } from "../../shared/utils/styles";
 
@@ -8,11 +8,11 @@ export const MainSectionWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - 78px);
-    width: 100%;
+    justify-content: center;
+    height: calc(100vh - 80px);
     background-image: url('${img}');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 112%;
 `;
 
 export const PageHeading = styled.h1`
@@ -21,8 +21,7 @@ export const PageHeading = styled.h1`
     line-height: 72px;
     text-align: center;
     text-transform: capitalize;
-    margin-top: 227px;
-    margin-bottom: 0px;
+    margin: 0px;
     ${font.bold}
 `;
 
@@ -36,7 +35,5 @@ export const ShortDescription = styled.p`
 
 export const SignUpBtn = styled(StyledButton)`
     @media ${devices.tablet} {
-        display: none;
-        width: 0px;
     }
 `;
