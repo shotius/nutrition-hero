@@ -1,7 +1,7 @@
-import styled from 'styled-components/macro'
+import styled, { css } from 'styled-components/macro'
 import img from '../../shared/assests/Logo Black Full-1.svg'
 import { StyledButton } from '../../shared/components/Button/Styles';
-import { devices, mixins } from '../../shared/utils/styles';
+import { devices, mixins, colors, font } from '../../shared/utils/styles';
 import { Wrapper } from '../../Styles';
 
 
@@ -19,8 +19,10 @@ export const Wrap = styled(Wrapper)`
     display: flex;
     background: white;
     justify-content: space-between;
-    /* background: red;  */
-    /* @media (min) */
+    max-width: 500px;
+    @media ${devices.tablet} { 
+        max-width: 100%;
+    }
 `;
 
 export const PageLogo = styled.img.attrs({
@@ -39,18 +41,31 @@ export const  NavBar = styled.div`
     flex: 0.8;
 `;
 
-export const NavLink = styled(StyledButton)`
-    display: none;
-    @media ${devices.tablet} {
-        padding: 0px 16px;
-        display: block;
-    } 
-`;
-export const SignUpBtn = styled(StyledButton)`
+const linkShowHide = css`
     display: none;
     @media ${devices.tablet} {
         display: flex;
     } 
+`;
+
+export const NavLink = styled(StyledButton)`
+    ${linkShowHide}
+    padding: 0px 16px;
+`;
+
+export const SignUpBtn = styled(StyledButton)`
+    ${linkShowHide}
+    width: 69px;
+`;
+
+export const LoginBtn = styled(StyledButton)`
+    text-transform: capitalize;
+    padding-left: 16px;
+    color: ${colors.darkPurple};
+    ${linkShowHide}
+    &:hover {
+      ${font.bold};
+    }
 `;
 
 export const Menu = styled.img.attrs(props => ({

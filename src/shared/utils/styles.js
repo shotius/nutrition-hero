@@ -31,11 +31,13 @@ export const sliderStyle = {
 }
 
 const sizes = {
+    mobile: '560px',
     tablet: "790px",
     laptop: "1164px"
 }
 
 export const devices = {
+    mobile: `(min-width: ${sizes.mobile})`,
     tablet: `(min-width: ${sizes.tablet})`,
     laptop: `(min-width: ${sizes.laptop})`
 }

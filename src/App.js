@@ -23,10 +23,10 @@ function App() {
       <NormalizeStyle />
       <Header exercisesRef={exercisesRef} nutritionRef={nutritionRef} />
       <MainSection />
-      <SectionTwo ref={ref} /> 
-      <Carousels />
+      {/* <SectionTwo ref={ref} />  */}
+      {/* <Carousels />
       <ForthSection/>
-      <Footer />
+      <Footer /> */}
   </>
   );
 }

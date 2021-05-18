@@ -77,11 +77,7 @@ const primary = css`
   color: white;
   border: 1px solid #80334B;
   border-radius: 5px;
-  ${props => (props.width ? css`
-    width: ${props.width};`
-    : css`
-    width: 69px;
-  `)};
+  ${props => (props.width && css`width: ${props.width};`)};
   ${props => (props.margin && css`margin: ${props.margin}`)};
   &:active {
    transform: scale(0.97);
@@ -97,11 +93,4 @@ const buttonVariants = {
   navLink: navLink,
   tagLink: tagLink,
   primary: primary,
-  login: css`
-    text-transform: capitalize;
-    color: ${colors.darkPurple};
-    &:hover {
-      ${font.bold};
-    }
-  `,
 }
