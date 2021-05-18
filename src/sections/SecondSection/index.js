@@ -29,11 +29,13 @@ const SectionTwo = React.forwardRef((props,  ref) => {
     ]
     const [activeIndex, setActiveIndex] = useState(0)
 
+    const {exercisesRef, nutritionRef} = ref
+
     return (    
         <SectionTwoWrap>
             <Wrapper>
-                <ExerciseWrap>
-                    <SectionHeader exercisesRef={exercisesRef} size="large" flexPosition="center">
+                <ExerciseWrap ref={exercisesRef}>
+                    <SectionHeader  size="large" flexPosition="center">
                         Exercise
                     </SectionHeader>
                     <TagLinks flexPosition="center">
@@ -53,7 +55,7 @@ const SectionTwo = React.forwardRef((props,  ref) => {
                         </TextWrap>
                     </TagInfoWrap>
                 </ExerciseWrap>
-                <NutritionWrap>
+                <NutritionWrap ref={nutritionRef}>
                     <TextWrap color="white">
                         <SectionHeader size="large" color="white">
                             Nutrition

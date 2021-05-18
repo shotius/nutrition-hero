@@ -1,8 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Button from '../../shared/components/Button'
 import { Wrap, PageLogo, NavBar, Sticky } from './Styles'
 
-const Header = () => {
+const Header = ({exercisesRef, nutritionRef}) => {
+    
+    useEffect(() => {
+        console.log('exercisesRef', exercisesRef.current)
+        console.log('nutritionRef', nutritionRef.current)
+      }, [])
+    
     return (
         <Sticky>
             <Wrap>

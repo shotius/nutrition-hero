@@ -5,21 +5,26 @@ import SectionTwo from './sections/SecondSection'
 import Carousels from './sections/Carousels';
 import Footer from './sections/Footer';
 import ForthSection from './sections/ForthSection';
-import { useRef } from 'react';
+import { createRef, useEffect, useRef, useState } from 'react';
+import Child from './Child';
 
 function App() {
-  const exercisesRef = useRef()
+  const exercisesRef = createRef()
   const nutritionRef = useRef()
   const expertiesRef = useRef()
   const App = useRef()
 
-  console.log(exercisesRef.current, 'current')
+  const ref = {
+    exercisesRef,
+    nutritionRef,
+  }
+  
   return (
    <>
       <NormalizeStyle />
-      <Header />
+      <Header exercisesRef={exercisesRef} nutritionRef={nutritionRef} />
       <MainSection />
-      <SectionTwo exercisesRef={exercisesRef}/> 
+      <SectionTwo ref={ref} /> 
       <Carousels />
       <ForthSection/>
       <Footer />
