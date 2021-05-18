@@ -5,8 +5,7 @@ import SectionTwo from './sections/SecondSection'
 import Carousels from './sections/Carousels';
 import Footer from './sections/Footer';
 import ForthSection from './sections/ForthSection';
-import { createRef, useEffect, useRef, useState } from 'react';
-import Child from './Child';
+import { createRef, useRef } from 'react';
 
 function App() {
   const exercisesRef = createRef()
