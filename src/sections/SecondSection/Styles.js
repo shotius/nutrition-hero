@@ -52,9 +52,21 @@ export const TagPicture = styled.img.attrs(props => ({
 
 export const TextWrap = styled.div`
     width: 42%;
-    ${props => (props.color && css`color: ${colors[props.color]}`)};
-    ${font.regular};
-    line-height: 24px;
+    line-height: 20px;
+    color: ${colors.Grey};
+    ${font.sfRegular};
+    ${font.size(15)};
+    @media ${devices.tablet} {
+        line-height: 24px;
+        ${font.regular};
+        ${font.size(16)};
+        ${props => (props.color 
+            ? css`
+                color: ${colors[props.color]};`
+            : css`
+                color: ${colors.black}`)};
+
+    }
 `;
 
 export const NutritionWrap = styled.div`

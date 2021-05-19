@@ -18,6 +18,7 @@ export const font = {
     regular: `font-family: 'Lato Regular';`,
     compact: `font-family: 'SfCompact Black';`,
     semibold: `font-family: 'Sf Semibold';`,
+    sfRegular: `font-family: 'Sf Regular';`,
     size: (size) => `font-size: ${size}px;`
 }
 
