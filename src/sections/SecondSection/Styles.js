@@ -1,26 +1,43 @@
 import styled, {css} from "styled-components/macro";
+import SectionHeader from "../../shared/components/SectionHeader";
+import { StyledHeader } from "../../shared/components/SectionHeader/Styles";
 import { colors, devices, font } from "../../shared/utils/styles";
+import {Wrapper} from '../../Styles'
 
-export const SectionTwoWrap = styled.div`
-    display: flex;
-    justify-content: center; 
-    width: 100%;
-    background-color: ${colors.darkBlue};
+export const ExerciseBackground = styled.div`
+    padding: 20px 0px;
+    background-color: ${colors.white};
+    @media ${devices.tablet} {
+        background-color: ${colors.darkBlue};
+    }
 `;
 
-export const ExerciseWrap = styled.div`
-    padding: 20px 0px 50px;
+export const NutritionBackground = styled.div`
+    background-color: ${colors.darkBlue}
+`;
+
+export const ExerciseWrap = styled(Wrapper)`
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
     position: relative;
-    width: 100%;
-    border-radius: 20px;
     background-color: white;
-    box-shadow: -5px -10px 20px #00000033;
+    box-shadow: -5px -10px 10px #00000033, 5px 10px 20px #00000033;
+    border-radius: 20px;
+    @media ${devices.tablet} {
+    }
     @media ${devices.laptop} {
         margin-top: -100px;
     }
 `;
 
+export const Header = styled(StyledHeader)`
+    flex-basis: 100%;
+    margin: 10px 0px;
+`;
+
 export const TagLinks = styled.div`
+    flex-basis: 100%;
     position: relative;
     display: flex;
     align-items: center;
@@ -28,19 +45,12 @@ export const TagLinks = styled.div`
     ${props => props.flexPosition && css`justify-content: ${props.flexPosition}`}
 `;
 
-export const TagInfoWrap = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    margin-top: 32px;
-    align-items: center;
-    width: 80%;
-`;
-
 export const ImageWrapper = styled.div`
-    width: 50%;
-    height: 271px;
-    max-width: 409px;
+    margin-top: 20px;
+    flex: 1;
+    flex-basis: 100%;
+    /* height: 271px; */
+    /* max-width: 409px; */
 `;
 
 export const TagPicture = styled.img.attrs(props => ({
@@ -68,6 +78,7 @@ const styledText = css`
 export const ExerciseText = styled.p`
     ${styledText};
     color: ${colors.Grey};
+    margin-top: 0px;
     @media ${devices.tablet} {
         color: ${colors.black};
     }

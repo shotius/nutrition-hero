@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import Button from '../../shared/components/Button'
 import SectionHeader from '../../shared/components/SectionHeader'
-import { Wrapper } from '../../Styles'
-import { ExerciseWrap, NutritionWrap, SectionTwoWrap, TagInfoWrap, TagLinks, TagPicture, TextWrap, ImageWrapper, ExerciseText, NutritionText } from './Styles'
+import { ExerciseWrap, Header,  TagLinks, TagPicture, TextWrap, ImageWrapper, ExerciseText, NutritionText, ExerciseBackground, NutritionBackground, NutritionWrap } from './Styles'
 import workout_1 from '../../shared/assests/Mail_Image.png'
 import workout_2 from '../../shared/assests/ladyathome.jpg'
 import workout_3 from '../../shared/assests/yogalady.jpg'
 import food_1 from '../../shared/assests/Rectangle 1473.png'
+import { colors } from '../../shared/utils/styles'
+import { Wrapper } from '../../Styles'
 
 
 const SectionTwo = React.forwardRef((props,  ref) => {
@@ -32,18 +33,19 @@ const SectionTwo = React.forwardRef((props,  ref) => {
     const {exercisesRef, nutritionRef} = ref
 
     return (    
-        <SectionTwoWrap>
+        <>
+        <ExerciseBackground>
             <Wrapper>
                 <ExerciseWrap ref={exercisesRef}>
-                    <SectionHeader  size="large" flexPosition="center">
+                    <Header  size="large" flexPosition="center">
                         Exercise
-                    </SectionHeader>
+                    </Header>
                     <TagLinks flexPosition="center">
                         <Button type="tagLink" isActive={activeIndex === 0 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(0)}>Home</Button>
                         <Button type="tagLink" isActive={activeIndex === 1 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(1)}>Gym</Button>
                         <Button type="tagLink" isActive={activeIndex === 2 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(2)}>Yoga</Button>
                     </TagLinks>
-                    <TagInfoWrap>
+                    {/* <SectionInfoWrap> */}
                         <ImageWrapper>
                             <TagPicture src={data[activeIndex].img} />
                         </ImageWrapper>
@@ -55,31 +57,35 @@ const SectionTwo = React.forwardRef((props,  ref) => {
                                 {data[activeIndex].text}
                             </ExerciseText>
                         </TextWrap>
-                    </TagInfoWrap>
+                    {/* </SectionInfoWrap> */}
                 </ExerciseWrap>
-                <NutritionWrap ref={nutritionRef}>
-                    <TextWrap color="white">
-                        <SectionHeader size="large" color="white">
-                            Nutrition
-                        </SectionHeader>
-                        <TagLinks flexPosition="flex-start">
-                            <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
-                            <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
-                            <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
-                        </TagLinks>
-                        <SectionHeader size="medium" color="white">
-                        A short title works
-                        </SectionHeader> 
-                        <NutritionText>
-                            best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
-                        </NutritionText>
-                    </TextWrap>
-                        <ImageWrapper>
-                            <TagPicture src={food_1} />
-                        </ImageWrapper>
-                </NutritionWrap>
             </Wrapper>
-        </SectionTwoWrap>
+        </ExerciseBackground>
+        <NutritionBackground>
+            <NutritionWrap ref={nutritionRef}>
+                <TextWrap color="white">
+                    <SectionHeader size="large" color="white">
+                        Nutrition
+                    </SectionHeader>
+                    <TagLinks flexPosition="flex-start">
+                        <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
+                        <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
+                        <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
+                    </TagLinks>
+                    <SectionHeader size="medium" color="white">
+                    A short title works
+                    </SectionHeader> 
+                    <NutritionText>
+                        best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
+                    </NutritionText>
+                </TextWrap>
+                <ImageWrapper>
+                <TagPicture src={food_1} />
+                </ImageWrapper>
+            </NutritionWrap>
+        </NutritionBackground>
+        </>
+           
     )
 })
 export default SectionTwo

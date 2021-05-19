@@ -17,7 +17,8 @@ const headerTypes = {
         }
     `,
     medium: css`
-        padding: 10px 0px;
+        margin-top: 20px;
+        margin-bottom: 0px;
         letter-spacing: -0.01px;
         line-height: 22px;
         ${font.semibold};
