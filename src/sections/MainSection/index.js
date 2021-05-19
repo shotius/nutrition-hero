@@ -1,4 +1,5 @@
 import React from 'react'
+import { Wrapper } from '../../Styles';
 import {  MainSectionWrap, PageHeading, ShortDescription, SignUpBtn } from './Styles';
 
 
@@ -9,9 +10,9 @@ const MainSection = () => {
                 Captivating Header <br/>goes Here
             </PageHeading>
             <ShortDescription>
-            A short description works best
+               A short description works best
             </ShortDescription>
-            <SignUpBtn type="primary" width="324px">Start now</SignUpBtn>
+            <SignUpBtn type="primary">Start now</SignUpBtn>
         </MainSectionWrap>
     )
 }

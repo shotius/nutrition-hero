@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components/macro";
-import { colors, font } from "../../shared/utils/styles";
+import { colors, devices, font } from "../../shared/utils/styles";
 
 export const SectionTwoWrap = styled.div`
     display: flex;
@@ -12,10 +12,12 @@ export const ExerciseWrap = styled.div`
     padding: 20px 0px 50px;
     position: relative;
     width: 100%;
-    margin-top: -100px;
     border-radius: 20px;
     background-color: white;
     box-shadow: -5px -10px 20px #00000033;
+    @media ${devices.laptop} {
+        margin-top: -100px;
+    }
 `;
 
 export const TagLinks = styled.div`

@@ -3,6 +3,7 @@ import { font, devices } from "./shared/utils/styles";
 
 export const Wrapper = styled.div`
     padding: 0px 16px;
+    position: relative;
     margin: 0 auto;
     @media ${devices.tablet} {
         padding: 0px;

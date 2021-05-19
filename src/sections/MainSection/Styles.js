@@ -16,29 +16,40 @@ export const MainSectionWrap = styled.div`
 `;
 
 export const PageHeading = styled.h1`
-    font-size: 60px;
-    letter-spacing: 0.02px;
-    line-height: 72px;
+    line-height: 50px;
     text-align: center;
     text-transform: capitalize;
+    letter-spacing: 0.01px;
     margin: 0px;
+    ${font.size(42)};
     ${font.bold}
+    @media ${devices.tablet} {
+        line-height: 72px;
+        letter-spacing: 0.02px;
+        ${font.size(60)}
+    }
 `;
 
 export const ShortDescription = styled.p`
-    height: 27px;
-    margin-top: 10px;
+    line-height: 28px;
+    margin: 10px 0px;
     text-align: center;
-    ${font.size(22)}
-    ${font.regular}
+    ${font.size(20)};
+    ${font.regular};
+    @media ${devices.tablet} {
+        ${font.size(22)}
+    }
 `;
 
 export const SignUpBtn = styled(StyledButton)`
         position: fixed;
-        bottom: 10px;;
+        bottom: 10px;
         z-index: 1000;
-        flex: 1;
+        width: 93%;
     @media ${devices.tablet} {
         position: relative;
+        width: 324px;
+        margin-top: 39px;
+        height: 50px;
     }
 `;
