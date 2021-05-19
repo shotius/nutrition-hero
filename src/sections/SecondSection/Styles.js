@@ -51,21 +51,33 @@ export const TagPicture = styled.img.attrs(props => ({
 `;
 
 export const TextWrap = styled.div`
-    width: 42%;
+    flex: 0.9;
+`;
+
+const styledText = css`
     line-height: 20px;
-    color: ${colors.Grey};
     ${font.sfRegular};
     ${font.size(15)};
     @media ${devices.tablet} {
         line-height: 24px;
         ${font.regular};
         ${font.size(16)};
-        ${props => (props.color 
-            ? css`
-                color: ${colors[props.color]};`
-            : css`
-                color: ${colors.black}`)};
+    }
+`;
 
+export const ExerciseText = styled.p`
+    ${styledText};
+    color: ${colors.Grey};
+    @media ${devices.tablet} {
+        color: ${colors.black};
+    }
+`;
+
+export const NutritionText = styled.p`
+    ${styledText};
+    color: ${colors.dirtyWhite};
+    @media ${devices.tablet} {
+        color: ${colors.white};
     }
 `;
 

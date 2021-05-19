@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Button from '../../shared/components/Button'
 import SectionHeader from '../../shared/components/SectionHeader'
 import { Wrapper } from '../../Styles'
-import { ExerciseWrap, NutritionWrap, SectionTwoWrap, TagInfoWrap, TagLinks, TagPicture, TextWrap, ImageWrapper } from './Styles'
+import { ExerciseWrap, NutritionWrap, SectionTwoWrap, TagInfoWrap, TagLinks, TagPicture, TextWrap, ImageWrapper, ExerciseText, NutritionText } from './Styles'
 import workout_1 from '../../shared/assests/Mail_Image.png'
 import workout_2 from '../../shared/assests/ladyathome.jpg'
 import workout_3 from '../../shared/assests/yogalady.jpg'
@@ -50,8 +50,10 @@ const SectionTwo = React.forwardRef((props,  ref) => {
                         <TextWrap>
                             <SectionHeader size="medium">
                                 {data[activeIndex].header}
-                            </SectionHeader> 
-                            {data[activeIndex].text}
+                            </SectionHeader>
+                            <ExerciseText>
+                                {data[activeIndex].text}
+                            </ExerciseText>
                         </TextWrap>
                     </TagInfoWrap>
                 </ExerciseWrap>
@@ -68,7 +70,9 @@ const SectionTwo = React.forwardRef((props,  ref) => {
                         <SectionHeader size="medium" color="white">
                         A short title works
                         </SectionHeader> 
-                        best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
+                        <NutritionText>
+                            best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
+                        </NutritionText>
                     </TextWrap>
                         <ImageWrapper>
                             <TagPicture src={food_1} />
