@@ -16,7 +16,8 @@ export const font = {
     medium: `font-family: 'Lato Medium'; font-weight: 400;`,
     black: `font-family: 'Lato Black'`,
     regular: `font-family: 'Lato Regular';`,
-    compact: `font-family: 'Compact Black'`,
+    compact: `font-family: 'SfCompact Black';`,
+    semibold: `font-family: 'Sf Semibold';`,
     size: (size) => `font-size: ${size}px;`
 }
 

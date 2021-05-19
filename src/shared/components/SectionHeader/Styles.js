@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components/macro";
-import { font } from "../../utils/styles";
+import { devices, font } from "../../utils/styles";
 
 export const StyledHeader = styled.h1`
     display: flex;
@@ -10,13 +10,20 @@ export const StyledHeader = styled.h1`
 
 const headerTypes = {
     large: css`
-        ${font.size(42)};
+        ${font.size(30)};
         ${font.bold};
+        @media ${devices.laptop} {
+            ${font.size(42)};
+        }
     `,
     medium: css`
         padding: 10px 0px;
         line-height: 24px;
-        ${font.medium};
-        ${font.size(22)};
+        ${font.semibold};
+        ${font.size(17)};
+        @media ${devices.laptop} {
+            ${font.size(22)};
+            ${font.medium};
+        }
     `,
 }

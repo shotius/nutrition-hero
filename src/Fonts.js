@@ -5,6 +5,7 @@ import LatoBold from './fonts/Lato/Lato-Bold.ttf'
 import LatoRegular from './fonts/Lato/Lato-Regular.ttf'
 import LatoMedium from './fonts/Lato/Lato-Medium.ttf'
 import SFCompact from './fonts/SFCompact/FontsFree-Net-SFCompactDisplay-Black.ttf'
+import SfSemibold from './fonts/SFCompact/FontsFree-Net-SFProText-Semibold.ttf'
 
 export default createGlobalStyle`
   @font-face {
@@ -28,7 +29,11 @@ export default createGlobalStyle`
         src: url(${LatoMedium}) format('truetype');
   }
   @font-face {
-        font-family: 'Compact Black';
+        font-family: 'SfCompact Black';
         src: url(${SFCompact}) format('truetype');
+  }
+  @font-face {
+        font-family: 'Sf Semibold';
+        src: url(${SfSemibold}) format('truetype');
   }
 `;
