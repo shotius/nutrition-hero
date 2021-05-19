@@ -29,9 +29,13 @@ export const PageLogo = styled.img.attrs({
     src: img
 })`
     margin-top: 28px;
+    margin-left: 16px;
     height: 24px;
     width: 125px;
     ${mixins.clickable}
+    @media ${devices.laptop} {
+        margin-left: 0px;
+    }
 `;
 
 export const  NavBar = styled.div`
@@ -69,6 +73,7 @@ export const LoginBtn = styled(StyledButton)`
 `;
 
 export const MenuIconWrap = styled.div`
+        margin-right: 16px;
         width: 27px;
         height: 26px;
         font-size: 22px;
