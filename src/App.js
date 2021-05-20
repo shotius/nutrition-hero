@@ -47,7 +47,6 @@ function App() {
   return (
    <>
       <Fonts />
-      {/* <h1>FOnt</h1> */}
       <NormalizeStyle />
       <Header exercisesRef={exercisesRef} nutritionRef={nutritionRef} />
       <MainSection />

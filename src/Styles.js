@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
     margin: 0 auto;
     @media ${devices.tablet} {
         width: 700px;
+        padding: 0px;
     }
     @media ${devices.laptop} {
         width: 1000px;
