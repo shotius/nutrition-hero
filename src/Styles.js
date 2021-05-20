@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled, {css} from "styled-components/macro";
 import { font, devices } from "./shared/utils/styles";
 
 export const Wrapper = styled.div`
@@ -29,4 +29,15 @@ export const TextWrap = styled.div`
     width: 40%;
     line-height: 24px;
     ${font.regular};
+`;
+
+export const StyledText = styled.p`
+    line-height: 20px;
+    ${font.sfRegular};
+    ${font.size(15)};
+    @media ${devices.tablet} {
+        line-height: 24px;
+        ${font.regular};
+        ${font.size(16)};
+    }
 `;

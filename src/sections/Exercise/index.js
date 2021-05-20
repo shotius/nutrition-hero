@@ -1,16 +1,15 @@
 import React, {useState} from 'react'
 import Button from '../../shared/components/Button'
 import SectionHeader from '../../shared/components/SectionHeader'
-import { ExerciseWrap, Header,  TagLinks,SectionDots,  Img, TextWrap, ImageWrapper, ExerciseText, NutritionText, ExerciseBackground, NutritionBackground, NutritionWrap, InfoWrapper } from './Styles'
+import { ExerciseWrap, Header,  TagLinks,SectionDots,  Img, TextWrap, ImageWrapper, Text, ExerciseBackground, InfoWrapper } from './Styles'
 import workout_1 from '../../shared/assests/Mail_Image.png'
 import workout_2 from '../../shared/assests/ladyathome.jpg'
 import workout_3 from '../../shared/assests/yogalady.jpg'
-import food_1 from '../../shared/assests/Rectangle 1473.png'
 import { Wrapper } from '../../Styles'
 import {Dot} from '../Carousels/Slider/Styles'
 
 
-const SectionTwo = React.forwardRef((props,  ref) => {
+const Exercise = React.forwardRef((props,  ref) => {
     const data = [
         {
             img: workout_1,
@@ -30,13 +29,11 @@ const SectionTwo = React.forwardRef((props,  ref) => {
     ]
     const [activeIndex, setActiveIndex] = useState(0)
 
-    const {exercisesRef, nutritionRef} = ref
 
     return (    
-        <>
         <ExerciseBackground>
             <Wrapper>
-                <ExerciseWrap ref={exercisesRef}>
+                <ExerciseWrap>
                     <Header  size="large" flexPosition="center">
                         Exercise
                     </Header>
@@ -53,12 +50,12 @@ const SectionTwo = React.forwardRef((props,  ref) => {
                             <SectionHeader size="medium">
                                 {data[activeIndex].header}
                             </SectionHeader>
-                            <ExerciseText>
+                            <Text>
                                 {data[activeIndex].text}
-                            </ExerciseText>
+                            </Text>
                         </TextWrap>
                         <SectionDots>
-                        {data.map((slide, i) => {
+                        {data.map((el, i) => {
                             const active = activeIndex === i && true 
                             return (
                                 <Dot
@@ -73,31 +70,6 @@ const SectionTwo = React.forwardRef((props,  ref) => {
                     </ExerciseWrap>
             </Wrapper>
         </ExerciseBackground>
-        <NutritionBackground>
-            <NutritionWrap ref={nutritionRef}>
-                <TextWrap color="white">
-                    <SectionHeader size="large" color="white">
-                        Nutrition
-                    </SectionHeader>
-                    <TagLinks flexPosition="flex-start">
-                        <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
-                        <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
-                        <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
-                    </TagLinks>
-                    <SectionHeader size="medium" color="white">
-                    A short title works
-                    </SectionHeader> 
-                    <NutritionText>
-                        best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
-                    </NutritionText>
-                </TextWrap>
-                <ImageWrapper>
-                     <Img src={food_1} />
-                </ImageWrapper>
-            </NutritionWrap>
-        </NutritionBackground>
-        </>
-           
     )
 })
-export default SectionTwo
+export default Exercise

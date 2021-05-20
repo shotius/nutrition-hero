@@ -12,6 +12,7 @@ import LatoBlack from './fonts/Lato/Lato-Black.ttf'
 import LatoBold from './fonts/Lato/Lato-Bold.ttf'
 import LatoRegular from './fonts/Lato/Lato-Bold.ttf'
 import Fonts from './Fonts'
+import Exercise from './sections/Exercise';
 
 // const Fonts =  createGlobalStyle`
 //   @font-face {
@@ -50,7 +51,8 @@ function App() {
       <NormalizeStyle />
       <Header exercisesRef={exercisesRef} nutritionRef={nutritionRef} />
       <MainSection />
-      <SectionTwo ref={ref} /> 
+      <Exercise />
+      {/* <SectionTwo ref={ref} />  */}
       {/* <Carousels />
       <ForthSection/>
       <Footer /> */}
