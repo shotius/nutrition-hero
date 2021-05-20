@@ -1,8 +1,8 @@
 import styled, {css} from "styled-components/macro";
-import SectionHeader from "../../shared/components/SectionHeader";
 import { StyledHeader } from "../../shared/components/SectionHeader/Styles";
 import { colors, devices, font } from "../../shared/utils/styles";
 import {Wrapper} from '../../Styles'
+import {Dot, Dots} from '../Carousels/Slider/Styles'
 
 export const ExerciseBackground = styled.div`
     padding: 20px 0px;
@@ -45,12 +45,13 @@ export const TagLinks = styled.div`
     ${props => props.flexPosition && css`justify-content: ${props.flexPosition}`}
 `;
 
+
 export const ImageWrapper = styled.div`
     margin-top: 20px;
     flex: 1;
+    display: flex;
     flex-basis: 100%;
-    /* height: 271px; */
-    /* max-width: 409px; */
+    height: 60vw;
 `;
 
 export const TagPicture = styled.img.attrs(props => ({
@@ -58,6 +59,7 @@ export const TagPicture = styled.img.attrs(props => ({
   }))`
     height: 100%;
     width: 100%;
+    object-fit: cover;
 `;
 
 export const TextWrap = styled.div`
@@ -99,3 +101,13 @@ export const NutritionWrap = styled.div`
     position: relative;
     width: 100%;
 `;
+
+export const SectionDots = styled(Dots)`
+    bottom: 0px;
+    position: relative;
+    @media ${devices.tablet} {
+        display: none;
+    }
+`;
+
+console.log(NutritionWrap)

@@ -18,9 +18,10 @@ const headerTypes = {
     `,
     medium: css`
         margin-top: 20px;
-        margin-bottom: 0px;
+        margin-bottom: 5px;
         letter-spacing: -0.01px;
         line-height: 22px;
+        text-transform: capitalize;
         ${font.semibold};
         ${font.size(17)};
         @media ${devices.laptop} {

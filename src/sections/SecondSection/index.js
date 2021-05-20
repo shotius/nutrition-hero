@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import Button from '../../shared/components/Button'
 import SectionHeader from '../../shared/components/SectionHeader'
-import { ExerciseWrap, Header,  TagLinks, TagPicture, TextWrap, ImageWrapper, ExerciseText, NutritionText, ExerciseBackground, NutritionBackground, NutritionWrap } from './Styles'
+import { ExerciseWrap, Header,  TagLinks,SectionDots,  TagPicture, TextWrap, ImageWrapper, ExerciseText, NutritionText, ExerciseBackground, NutritionBackground, NutritionWrap } from './Styles'
 import workout_1 from '../../shared/assests/Mail_Image.png'
 import workout_2 from '../../shared/assests/ladyathome.jpg'
 import workout_3 from '../../shared/assests/yogalady.jpg'
 import food_1 from '../../shared/assests/Rectangle 1473.png'
-import { colors } from '../../shared/utils/styles'
 import { Wrapper } from '../../Styles'
+import {Dot} from '../Carousels/Slider/Styles'
 
 
 const SectionTwo = React.forwardRef((props,  ref) => {
@@ -24,7 +24,7 @@ const SectionTwo = React.forwardRef((props,  ref) => {
         },
         {
             img: workout_3,
-            header: 'yoga is best',
+            header: 'yoga is the best',
             text: 'on la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.'
         }
     ]
@@ -45,20 +45,30 @@ const SectionTwo = React.forwardRef((props,  ref) => {
                         <Button type="tagLink" isActive={activeIndex === 1 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(1)}>Gym</Button>
                         <Button type="tagLink" isActive={activeIndex === 2 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(2)}>Yoga</Button>
                     </TagLinks>
-                    {/* <SectionInfoWrap> */}
-                        <ImageWrapper>
-                            <TagPicture src={data[activeIndex].img} />
-                        </ImageWrapper>
-                        <TextWrap>
-                            <SectionHeader size="medium">
-                                {data[activeIndex].header}
-                            </SectionHeader>
-                            <ExerciseText>
-                                {data[activeIndex].text}
-                            </ExerciseText>
-                        </TextWrap>
-                    {/* </SectionInfoWrap> */}
-                </ExerciseWrap>
+                    <ImageWrapper>
+                        <TagPicture src={data[activeIndex].img} />
+                    </ImageWrapper>
+                    <TextWrap>
+                        <SectionHeader size="medium">
+                            {data[activeIndex].header}
+                        </SectionHeader>
+                        <ExerciseText>
+                            {data[activeIndex].text}
+                        </ExerciseText>
+                    </TextWrap>
+                    <SectionDots>
+                    {data.map((slide, i) => {
+                        const active = activeIndex === i && true 
+                        return (
+                            <Dot
+                                key={i}
+                                isActive={active} 
+                                onClick={() => setActiveIndex(i)}
+                                />
+                        )
+                    })}
+                    </SectionDots>
+                    </ExerciseWrap>
             </Wrapper>
         </ExerciseBackground>
         <NutritionBackground>
