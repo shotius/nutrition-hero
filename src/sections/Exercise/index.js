@@ -52,7 +52,10 @@ const Exercise = React.forwardRef((props,  ref) => {
                                     isActive={activeIndex === data.id && true } 
                                     color="Grey" 
                                     onhover="black" 
-                                    onClick={() => setActiveIndex(data.id)}>{data.heading}</Button>    
+                                    onClick={() => setActiveIndex(data.id)}
+                                    >
+                                        {data.heading}
+                                </Button>    
                             )
                         )}
                         </TagLinks>
