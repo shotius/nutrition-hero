@@ -5,7 +5,7 @@ import {Wrapper,StyledText} from '../../Styles'
 import { Dots } from '../Carousels/Slider/Styles'
 
 export const ExerciseBackground = styled.div`
-    padding: 20px 0px;
+    padding-top: 20px;
     background-color: ${colors.white};
     @media ${devices.tablet} {
         background-color: ${colors.darkBlue};

@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 import Button from '../../shared/components/Button'
-import SectionHeader from '../../shared/components/SectionHeader'
-import { TextWrap, NutritionText, NutritionBackground, NutritionWrap, Nav, ImageWrap, InfoWrap, Header, Dots } from './Styles'
+import { TextWrap, NutritionText, NutritionBackground, NutritionWrap, Nav, ImageWrap, TextHeader, Header} from './Styles'
 import { Img } from '../Exercise/Styles'
 import food_1 from '../../shared/assests/Rectangle 1473.png'
-import { Dot } from '../Carousels/Slider/Styles'
+import { Dot, Dots } from '../Carousels/Slider/Styles'
 
 
 const Nutrition = React.forwardRef((props,  ref) => {
@@ -34,8 +33,7 @@ const Nutrition = React.forwardRef((props,  ref) => {
                 <Header size="large" color="white">
                     Nutrition
                 </Header>
-                <InfoWrap>
-                    <Nav>
+                <Nav>
                     {data.map(data => (
                         <Button 
                             key={data.id}
@@ -47,22 +45,21 @@ const Nutrition = React.forwardRef((props,  ref) => {
                                 {data.heading}
                         </Button>
                     ))}
-                    </Nav>
-                    <TextWrap color="white">
-                        <SectionHeader size="medium" color="white">
+                </Nav>
+                <ImageWrap>
+                    <Img src={food_1} />
+                </ImageWrap>
+                <TextWrap color="white">
+                    <TextHeader size="medium" color="white">
                         A short title works
-                        </SectionHeader> 
-                        <NutritionText>
-                            best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
-                        </NutritionText>
-                    </TextWrap>
-                    <ImageWrap>
-                        <Img src={food_1} />
-                    </ImageWrap>
-                    <Dots>
-                        <Dot />
-                    </Dots>
-                </InfoWrap>
+                    </TextHeader>
+                    <NutritionText>
+                        best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
+                    </NutritionText>
+                </TextWrap>
+                <Dots>
+                    <Dot />
+                </Dots>
             </NutritionWrap>
         </NutritionBackground>
     )
