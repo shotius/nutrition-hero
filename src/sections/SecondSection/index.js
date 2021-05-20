@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import Button from '../../shared/components/Button'
 import SectionHeader from '../../shared/components/SectionHeader'
-import { Wrapper } from '../../Styles'
-import { ExerciseWrap, NutritionWrap, SectionTwoWrap, TagInfoWrap, TagLinks, TagPicture, TextWrap, ImageWrapper } from './Styles'
+import { ExerciseWrap, Header,  TagLinks,SectionDots,  TagPicture, TextWrap, ImageWrapper, ExerciseText, NutritionText, ExerciseBackground, NutritionBackground, NutritionWrap } from './Styles'
 import workout_1 from '../../shared/assests/Mail_Image.png'
 import workout_2 from '../../shared/assests/ladyathome.jpg'
 import workout_3 from '../../shared/assests/yogalady.jpg'
 import food_1 from '../../shared/assests/Rectangle 1473.png'
+import { Wrapper } from '../../Styles'
+import {Dot} from '../Carousels/Slider/Styles'
 
 
 const SectionTwo = React.forwardRef((props,  ref) => {
@@ -23,7 +24,7 @@ const SectionTwo = React.forwardRef((props,  ref) => {
         },
         {
             img: workout_3,
-            header: 'yoga is best',
+            header: 'yoga is the best',
             text: 'on la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.'
         }
     ]
@@ -32,50 +33,70 @@ const SectionTwo = React.forwardRef((props,  ref) => {
     const {exercisesRef, nutritionRef} = ref
 
     return (    
-        <SectionTwoWrap>
+        <>
+        <ExerciseBackground>
             <Wrapper>
                 <ExerciseWrap ref={exercisesRef}>
-                    <SectionHeader  size="large" flexPosition="center">
+                    <Header  size="large" flexPosition="center">
                         Exercise
-                    </SectionHeader>
+                    </Header>
                     <TagLinks flexPosition="center">
                         <Button type="tagLink" isActive={activeIndex === 0 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(0)}>Home</Button>
                         <Button type="tagLink" isActive={activeIndex === 1 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(1)}>Gym</Button>
                         <Button type="tagLink" isActive={activeIndex === 2 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(2)}>Yoga</Button>
                     </TagLinks>
-                    <TagInfoWrap>
-                        <ImageWrapper>
-                            <TagPicture src={data[activeIndex].img} />
-                        </ImageWrapper>
-                        <TextWrap>
-                            <SectionHeader size="medium">
-                                {data[activeIndex].header}
-                            </SectionHeader> 
-                            {data[activeIndex].text}
-                        </TextWrap>
-                    </TagInfoWrap>
-                </ExerciseWrap>
-                <NutritionWrap ref={nutritionRef}>
-                    <TextWrap color="white">
-                        <SectionHeader size="large" color="white">
-                            Nutrition
+                    <ImageWrapper>
+                        <TagPicture src={data[activeIndex].img} />
+                    </ImageWrapper>
+                    <TextWrap>
+                        <SectionHeader size="medium">
+                            {data[activeIndex].header}
                         </SectionHeader>
-                        <TagLinks flexPosition="flex-start">
-                            <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
-                            <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
-                            <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
-                        </TagLinks>
-                        <SectionHeader size="medium" color="white">
-                        A short title works
-                        </SectionHeader> 
-                        best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
+                        <ExerciseText>
+                            {data[activeIndex].text}
+                        </ExerciseText>
                     </TextWrap>
-                        <ImageWrapper>
-                            <TagPicture src={food_1} />
-                        </ImageWrapper>
-                </NutritionWrap>
+                    <SectionDots>
+                    {data.map((slide, i) => {
+                        const active = activeIndex === i && true 
+                        return (
+                            <Dot
+                                key={i}
+                                isActive={active} 
+                                onClick={() => setActiveIndex(i)}
+                                />
+                        )
+                    })}
+                    </SectionDots>
+                    </ExerciseWrap>
             </Wrapper>
-        </SectionTwoWrap>
+        </ExerciseBackground>
+        <NutritionBackground>
+            
+            <NutritionWrap ref={nutritionRef}>
+                <TextWrap color="white">
+                    <SectionHeader size="large" color="white">
+                        Nutrition
+                    </SectionHeader>
+                    <TagLinks flexPosition="flex-start">
+                        <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
+                        <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
+                        <Button type="tagLink" color='dirtyWhite' onhover="white">healthy</Button>
+                    </TagLinks>
+                    <SectionHeader size="medium" color="white">
+                    A short title works
+                    </SectionHeader> 
+                    <NutritionText>
+                        best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
+                    </NutritionText>
+                </TextWrap>
+                <ImageWrapper>
+                <TagPicture src={food_1} />
+                </ImageWrapper>
+            </NutritionWrap>
+        </NutritionBackground>
+        </>
+           
     )
 })
 export default SectionTwo

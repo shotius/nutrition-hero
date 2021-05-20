@@ -1,10 +1,16 @@
 import styled from "styled-components/macro";
-import { font } from "./shared/utils/styles";
+import { font, devices } from "./shared/utils/styles";
 
 export const Wrapper = styled.div`
-    width: 75%;
-    max-width: 1100px;
+    padding: 0px 16px;
+    position: relative;
     margin: 0 auto;
+    @media ${devices.tablet} {
+        width: 700px;
+    }
+    @media ${devices.laptop} {
+        width: 1000px;
+    } 
 `;
 
 export const Img = styled.img.attrs(props => ({

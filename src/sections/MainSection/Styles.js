@@ -1,35 +1,55 @@
 import styled from "styled-components/macro";
 
-import img from  '../../shared/assests/Large Hero.png'
-import { font } from "../../shared/utils/styles";
+import img from  '../../shared/assests/Large Hero@2x.png'
+import { StyledButton } from "../../shared/components/Button/Styles";
+import { devices, font } from "../../shared/utils/styles";
 
 export const MainSectionWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - 78px);
-    width: 100%;
+    justify-content: center;
+    height: calc(100vh - 80px);
     background-image: url('${img}');
     background-repeat: no-repeat;
     background-size: cover;
 `;
 
 export const PageHeading = styled.h1`
-    font-size: 60px;
-    letter-spacing: 0.02px;
-    line-height: 72px;
+    line-height: 50px;
     text-align: center;
     text-transform: capitalize;
-    margin-top: 227px;
-    margin-bottom: 0px;
+    letter-spacing: 0.01px;
+    margin: 0px;
+    ${font.size(42)};
     ${font.bold}
+    @media ${devices.tablet} {
+        line-height: 72px;
+        letter-spacing: 0.02px;
+        ${font.size(60)}
+    }
 `;
 
 export const ShortDescription = styled.p`
-    width: 294px;
-    height: 27px;
-    margin-top: 10px;
+    line-height: 28px;
+    margin: 10px 0px;
     text-align: center;
-    ${font.size(22)}
-    ${font.regular}
-`
+    ${font.size(20)};
+    ${font.regular};
+    @media ${devices.tablet} {
+        ${font.size(22)}
+    }
+`;
+
+export const SignUpBtn = styled(StyledButton)`
+        position: fixed;
+        bottom: 10px;
+        z-index: 1000;
+        width: 93%;
+    @media ${devices.tablet} {
+        position: relative;
+        width: 324px;
+        margin-top: 39px;
+        height: 50px;
+    }
+`;

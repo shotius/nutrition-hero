@@ -1,6 +1,7 @@
 import React from 'react'
-import Button from '../../shared/components/Button'
-import { Wrap, PageLogo, NavBar, Sticky } from './Styles'
+import { Wrap, PageLogo, NavBar, Sticky, NavLink, MenuIconWrap, SignUpBtn, LoginBtn} from './Styles'
+import {Menu} from '@styled-icons/boxicons-regular/Menu'
+
 
 const Header = ({exercisesRef, nutritionRef}) => {
     return (
@@ -8,12 +9,15 @@ const Header = ({exercisesRef, nutritionRef}) => {
             <Wrap>
                 <PageLogo />
                 <NavBar >
-                    <Button type="navLink" isActive={true} onClick={() => {}}>Exercises</Button>
-                    <Button type="navLink" isActive={false} onClick={() => {}}>expreties</Button>
-                    <Button type="navLink" isActive={false} onClick={() => {}}>nutrition</Button>
-                    <Button type="navLink" isActive={false} onClick={() => {}}>app</Button>
-                    <Button type="primary" margin="0px 31px 0px 0px" onClick={() => {}}>Sign up</Button>
-                    <Button type="login" onClick={() => {}}>login</Button>
+                    <NavLink type="navLink" isActive={true} onClick={() => {}}>Exercises</NavLink>
+                    <NavLink type="navLink" isActive={false} onClick={() => {}}>expreties</NavLink>
+                    <NavLink type="navLink" isActive={false} onClick={() => {}}>nutrition</NavLink>
+                    <NavLink type="navLink" isActive={false} onClick={() => {}}>app</NavLink>
+                    <SignUpBtn type="primary" onClick={() => {}}>Sign up</SignUpBtn>
+                    <LoginBtn type="login" onClick={() => {}}>login</LoginBtn>
+                    <MenuIconWrap>
+                        <Menu size="32"/>
+                    </MenuIconWrap>
                 </NavBar>
             </Wrap>
         </Sticky>

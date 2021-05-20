@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../../shared/components/Button';
-import {  MainSectionWrap, PageHeading, ShortDescription } from './Styles';
+import { Wrapper } from '../../Styles';
+import {  MainSectionWrap, PageHeading, ShortDescription, SignUpBtn } from './Styles';
 
 
 const MainSection = () => {
@@ -10,9 +10,9 @@ const MainSection = () => {
                 Captivating Header <br/>goes Here
             </PageHeading>
             <ShortDescription>
-            A short description works best
+               A short description works best
             </ShortDescription>
-            <Button type="primary" width="324px">Start now</Button>
+            <SignUpBtn type="primary">Start now</SignUpBtn>
         </MainSectionWrap>
     )
 }

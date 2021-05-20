@@ -47,8 +47,8 @@ const btmLine = css`
 
 const navLink = css`
   text-transform: uppercase;
-  margin-right: 31px;
   margin-top: 7px;
+  line-height: 17px;
   ${btmLine}
   
 `;
@@ -78,11 +78,7 @@ const primary = css`
   color: white;
   border: 1px solid #80334B;
   border-radius: 5px;
-  ${props => (props.width ? css`
-    width: ${props.width};`
-    : css`
-    width: 69px;
-  `)};
+  ${props => (props.width && css`width: ${props.width};`)};
   ${props => (props.margin && css`margin: ${props.margin}`)};
   &:active {
    transform: scale(0.97);
@@ -98,11 +94,4 @@ const buttonVariants = {
   navLink: navLink,
   tagLink: tagLink,
   primary: primary,
-  login: css`
-    text-transform: capitalize;
-    color: ${colors.darkPurple};
-    &:hover {
-      ${font.bold};
-    }
-  `,
 }
