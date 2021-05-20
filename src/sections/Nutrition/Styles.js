@@ -28,6 +28,12 @@ export const SectionDots = styled(Dots)`
     }
 `;
 
+export const InfoWrap = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
+
 export const TextWrap = styled.div`
     
 `;
