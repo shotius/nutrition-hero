@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Button from '../../shared/components/Button'
 import SectionHeader from '../../shared/components/SectionHeader'
-import { ExerciseWrap, Header,  TagLinks,SectionDots,  TagPicture, TextWrap, ImageWrapper, ExerciseText, NutritionText, ExerciseBackground, NutritionBackground, NutritionWrap } from './Styles'
+import { ExerciseWrap, Header,  TagLinks,SectionDots,  TagPicture, TextWrap, ImageWrapper, ExerciseText, NutritionText, ExerciseBackground, NutritionBackground, NutritionWrap, InfoWrapper } from './Styles'
 import workout_1 from '../../shared/assests/Mail_Image.png'
 import workout_2 from '../../shared/assests/ladyathome.jpg'
 import workout_3 from '../../shared/assests/yogalady.jpg'
@@ -40,34 +40,36 @@ const SectionTwo = React.forwardRef((props,  ref) => {
                     <Header  size="large" flexPosition="center">
                         Exercise
                     </Header>
-                    <TagLinks flexPosition="center">
-                        <Button type="tagLink" isActive={activeIndex === 0 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(0)}>Home</Button>
-                        <Button type="tagLink" isActive={activeIndex === 1 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(1)}>Gym</Button>
-                        <Button type="tagLink" isActive={activeIndex === 2 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(2)}>Yoga</Button>
-                    </TagLinks>
-                    <ImageWrapper>
-                        <TagPicture src={data[activeIndex].img} />
-                    </ImageWrapper>
-                    <TextWrap>
-                        <SectionHeader size="medium">
-                            {data[activeIndex].header}
-                        </SectionHeader>
-                        <ExerciseText>
-                            {data[activeIndex].text}
-                        </ExerciseText>
-                    </TextWrap>
-                    <SectionDots>
-                    {data.map((slide, i) => {
-                        const active = activeIndex === i && true 
-                        return (
-                            <Dot
-                                key={i}
-                                isActive={active} 
-                                onClick={() => setActiveIndex(i)}
-                                />
-                        )
-                    })}
-                    </SectionDots>
+                    <InfoWrapper>
+                        <TagLinks flexPosition="center">
+                            <Button type="tagLink" isActive={activeIndex === 0 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(0)}>Home</Button>
+                            <Button type="tagLink" isActive={activeIndex === 1 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(1)}>Gym</Button>
+                            <Button type="tagLink" isActive={activeIndex === 2 && true } color="Grey" onhover="black" onClick={() => setActiveIndex(2)}>Yoga</Button>
+                        </TagLinks>
+                        <ImageWrapper>
+                            <TagPicture src={data[activeIndex].img} />
+                        </ImageWrapper>
+                        <TextWrap>
+                            <SectionHeader size="medium">
+                                {data[activeIndex].header}
+                            </SectionHeader>
+                            <ExerciseText>
+                                {data[activeIndex].text}
+                            </ExerciseText>
+                        </TextWrap>
+                        <SectionDots>
+                        {data.map((slide, i) => {
+                            const active = activeIndex === i && true 
+                            return (
+                                <Dot
+                                    key={i}
+                                    isActive={active} 
+                                    onClick={() => setActiveIndex(i)}
+                                    />
+                            )
+                        })}
+                        </SectionDots>
+                    </InfoWrapper>
                     </ExerciseWrap>
             </Wrapper>
         </ExerciseBackground>

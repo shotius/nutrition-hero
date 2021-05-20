@@ -17,10 +17,7 @@ export const NutritionBackground = styled.div`
 `;
 
 export const ExerciseWrap = styled(Wrapper)`
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    position: relative;
+    padding-top: 10px;
     background-color: white;
     box-shadow: -5px -10px 10px #00000033, 5px 10px 20px #00000033;
     border-radius: 20px;
@@ -32,8 +29,19 @@ export const ExerciseWrap = styled(Wrapper)`
 `;
 
 export const Header = styled(StyledHeader)`
-    flex-basis: 100%;
     margin: 10px 0px;
+`;
+
+export const InfoWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 20px 20px 20px;
+    @media ${devices.tablet} {
+        padding: 0px 55px 40px 55px;
+    }
+    @media ${devices.laptop} {
+        padding: 0px 85px 60px 85px;
+    }
 `;
 
 export const TagLinks = styled.div`
@@ -49,9 +57,18 @@ export const TagLinks = styled.div`
 export const ImageWrapper = styled.div`
     margin-top: 20px;
     flex: 1;
-    display: flex;
     flex-basis: 100%;
     height: 60vw;
+    @media ${devices.tablet} {
+        height: 200px;
+        flex-basis: 30%;
+        padding-right: 50px;
+    }
+    @media ${devices.laptop} {
+        height: 271px;
+        flex-basis: 40%;
+        padding-top: 10px;
+    }
 `;
 
 export const TagPicture = styled.img.attrs(props => ({
@@ -59,11 +76,22 @@ export const TagPicture = styled.img.attrs(props => ({
   }))`
     height: 100%;
     width: 100%;
+    border-radius: 10px;
     object-fit: cover;
 `;
 
 export const TextWrap = styled.div`
     flex: 0.9;
+    @media ${devices.tablet} {
+        flex-basis: 30%;
+        padding-top: 10px;
+    }
+    @media ${devices.laptop} {
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 `;
 
 const styledText = css`
@@ -105,9 +133,8 @@ export const NutritionWrap = styled.div`
 export const SectionDots = styled(Dots)`
     bottom: 0px;
     position: relative;
+    padding-top: 10px;
     @media ${devices.tablet} {
         display: none;
     }
 `;
-
-console.log(NutritionWrap)
