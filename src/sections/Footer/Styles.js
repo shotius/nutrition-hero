@@ -12,6 +12,7 @@ export const FooterWrapper = styled.div`
 export const GetStartedWrap = styled.div`
     display: none;
     @media ${devices.laptop} {
+        display: block;
         padding: 70px 0px;
         width: 100%;
         background-color: ${colors.darkBlue};
@@ -81,8 +82,21 @@ export const Btn = styled.button`
     ${mixins.clickable}
 `;
 
+export const UpDownArrow = styled.img.attrs(props => ({
+    src: props.src
+}))`
+    @media ${devices.tablet} {
+        display: none;
+    }
+
+`;
+
 export const Links = styled.div`
-    ${props => (!props.shown && css`display: none`)}
+    ${props => (props.shown === true ? css`display: block` : css`display: none`)};
+    @media ${devices.tablet} {
+        display: block;
+    }
+
 `;
 
 export const MobileApps = styled.div`
