@@ -41,6 +41,7 @@ export const ImgWrap = styled.div`
 export const Header = styled(StyledHeader)`
     ${font.size(30)};
     line-height: 34px;
+    margin: 20px 0px;
     @media ${devices.tablet} {
         ${font.size(34)};
     }
@@ -50,6 +51,6 @@ export const Header = styled(StyledHeader)`
 `;
 
 export const TextHeader = styled(StyledHeader)`
-    margin: 24px 0px;
+    margin: 10px 0px 20px;
     ${font.size(22)};
 `;
