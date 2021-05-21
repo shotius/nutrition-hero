@@ -39,6 +39,7 @@ export const StyledText = styled.p`
     line-height: 20px;
     ${font.sfRegular};
     ${font.size(15)};
+    height: 100%;
     @media ${devices.tablet} {
         line-height: 24px;
         ${font.regular};

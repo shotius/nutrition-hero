@@ -5,12 +5,10 @@ import { devices, font } from "../../../shared/utils/styles";
 
 export const SlideWrapper = styled.div`
     display: flex;
-    /* align-items: center; */
     flex-wrap: wrap;
     flex-shrink: 0;
     flex: 1;
     height: 100%;
-    /* padding: 0px 5px; */
     padding-bottom: 56px;
     ${props => (props.width 
         && css`
@@ -42,7 +40,11 @@ export const ImgWrap = styled.div`
 
 export const Header = styled(StyledHeader)`
     ${font.size(30)};
+    line-height: 34px;
     @media ${devices.tablet} {
+        ${font.size(34)};
+    }
+    @media ${devices.laptop} {
         ${font.size(42)};
     }
 `;

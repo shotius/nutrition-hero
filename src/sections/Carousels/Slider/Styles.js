@@ -7,6 +7,9 @@ export const Carousel = styled.div`
     display: flex;
     position: relative;
     overflow: hidden;
+    @media ${devices.tablet}{
+    height: 500px;
+    }
     @media ${devices.laptop} {
         height: 720px;
     }
