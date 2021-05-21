@@ -80,12 +80,12 @@ export const Dots = styled.div`
   }
 `;
 
-export const Dot = styled.button`
-  height: 12px;
-  width: 5px;
+export const Dot = styled.div`
+  height: 8px;
+  width: 8px;
   border: none;
   margin: 0 8px;
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: ${colors.lightPurple};
   ${mixins.clickable};
   ${props => (props.isActive 
@@ -93,5 +93,10 @@ export const Dot = styled.button`
         background-color: ${colors.darkPurple}`)};
   &:active, &:hover {
       transform: scale(1.2);
+  }
+  @media ${devices.laptop} {
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
   }
 `;

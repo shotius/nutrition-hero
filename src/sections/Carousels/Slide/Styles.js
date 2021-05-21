@@ -38,6 +38,22 @@ export const ImgWrap = styled.div`
     }
 `;
 
+const paddingTablet  = css`
+    padding: 0px 30px;
+`;
+const paddingLaptop = css`
+    padding: 0px 90px;
+`;
+
+export const Text = styled.div`
+      @media ${devices.tablet} {
+        ${paddingTablet}
+    }
+    @media ${devices.laptop} {
+        ${paddingLaptop}
+    }
+`;
+
 export const Header = styled(StyledHeader)`
     ${font.size(30)};
     line-height: 34px;

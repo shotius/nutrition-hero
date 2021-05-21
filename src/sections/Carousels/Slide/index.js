@@ -1,7 +1,7 @@
 import React from 'react'
 import { sliderStyle } from '../../../shared/utils/styles'
 import { Img, TextWrap} from '../../../Styles'
-import { ImgWrap, SlideWrapper, Header, TextHeader} from './Styles'
+import { ImgWrap, SlideWrapper, Header, TextHeader, Text} from './Styles'
 
 const Slide = ({ slide, width}) => {
     return (
@@ -10,13 +10,15 @@ const Slide = ({ slide, width}) => {
                <Img src={slide.img} />
            </ImgWrap>
            <TextWrap>
-                <Header size="large">
-                    {slide.header}
-                </Header>
-                <TextHeader size="medium">
-                    {slide.name}
-                </TextHeader>
-                {slide.text}
+                <Text>
+                    <Header size="large">
+                        {slide.header}
+                    </Header>
+                    <TextHeader size="medium">
+                        {slide.name}
+                    </TextHeader>
+                        {slide.text}
+                </Text>
            </TextWrap>
        </SlideWrapper>
     )
