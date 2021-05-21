@@ -44,7 +44,7 @@ export const ShortDescription = styled.p`
 export const SignUpBtn = styled(StyledButton)`
         position: fixed;
         bottom: 10px;
-        z-index: 1000;
+        z-index: 999;
         width: 95%;
         height: 50px;
         ${font.regular}

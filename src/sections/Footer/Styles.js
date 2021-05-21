@@ -7,6 +7,11 @@ import { PageLogo } from "../Header/Styles";
 export const FooterWrapper = styled.div`
     margin-top: 10px;
     text-align: center;
+    padding-bottom: 100px;
+    @media ${devices.tablet} {
+        padding-bottom: 10px;
+        /* text-align: start; */
+    }
 `;
 
 export const GetStartedWrap = styled.div`
@@ -38,7 +43,6 @@ export const FooterLine = styled.div`
 
 export const FooterInfoWrap = styled(Wrapper)`
     display: flex;
-    /* justify-content: space-between; */
     justify-content: center;
     align-items: flex-start;
     text-align: center;
@@ -46,6 +50,7 @@ export const FooterInfoWrap = styled(Wrapper)`
     padding-top: 20px;
     @media ${devices.tablet} {
         padding-top: 40px;
+        justify-content: space-between;
     }
 `;
 
@@ -74,6 +79,10 @@ export const LinksWrap = styled.div`
     ${font.size(14)};
     order: 1;
     flex-basis: 100%;
+    @media ${devices.tablet} {
+        order: 0;
+        flex-basis: 10%;
+    }
 `;
 
 export const Btn = styled.button`
@@ -101,6 +110,9 @@ export const Links = styled.div`
 
 export const MobileApps = styled.div`
     order: 3;
+    @media ${devices.tablet} {
+        order: 0;
+    }
 `;
 
 export const GoogleStore = styled.img.attrs(props => ({
@@ -116,12 +128,11 @@ export const GoogleStore = styled.img.attrs(props => ({
 export const AppStore = styled.img.attrs(props => ({
     src: props.src
 }))`
-    padding-top: 60px;
-    padding-bottom: 28px;
+    padding: 60px 0px 28px;
     ${mixins.clickable};
     margin: auto;
     @media ${devices.tablet} {
-        margin-right: 16px;
+        padding: 0px 16px 0px;
     }
 `;
 
@@ -130,6 +141,7 @@ export const LogoWrap = styled.div`
     order: 0;
     @media ${devices.tablet} {
         margin: 15px 0px;
+        text-align: start;
     }
 `;
 
