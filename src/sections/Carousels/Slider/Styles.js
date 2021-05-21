@@ -3,7 +3,6 @@ import { mixins, colors, devices} from "../../../shared/utils/styles";
 
 export const Carousel = styled.div`
     width: 100%;
-    /* height: 500px; */
     display: flex;
     position: relative;
     overflow: hidden;
@@ -17,7 +16,6 @@ export const Carousel = styled.div`
 
 export const SliderContainer = styled.div`
     display: flex;
-    /* flex-wrap: wrap; */
     height: 100%;
     flex-shrink: 0;
     ${props => (props.width && css`width: ${props.width*100}%`)};
@@ -75,7 +73,7 @@ export const Dots = styled.div`
   width: 100%;
   display: flex;
   position: absolute;
-  bottom: 20px;
+  bottom: 36px;
   left: 0;
   @media ${devices.tablet} {
       bottom: 70px;

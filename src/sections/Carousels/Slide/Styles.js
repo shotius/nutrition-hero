@@ -25,13 +25,13 @@ export const SlideWrapper = styled.div`
 export const ImgWrap = styled.div`
     flex-basis: 100%;
     height: 100vw;
-    ${props => (props.order 
-        && css`
-            order: ${props.order}`)};
     @media ${devices.tablet} {
         height: 100%;
         flex-basis: 50%;
         height: 500px;
+        ${props => (props.order 
+        && css`
+            order: ${props.order}`)};
     }
     @media ${devices.laptop} {
         height: 720px;
