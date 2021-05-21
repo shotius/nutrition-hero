@@ -9,6 +9,7 @@ export const colors = {
     dirtyWhite: '#EFEFF4',
     white: "#fff",
     black: "#000",
+    semiGrey: '#F8F8F8',
 }
 
 export const font = {

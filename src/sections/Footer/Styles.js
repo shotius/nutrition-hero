@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import Button from "../../shared/components/Button";
-import { colors, font, mixins } from "../../shared/utils/styles";
+import { colors, devices, font, mixins } from "../../shared/utils/styles";
 import { Wrapper } from "../../Styles";
 
 export const FooterWrapper = styled.div`
@@ -8,9 +8,12 @@ export const FooterWrapper = styled.div`
 `;
 
 export const GetStartedWrap = styled.div`
-    padding: 70px 0px;
-    width: 100%;
-    background-color: ${colors.darkBlue};
+    display: none;
+    @media ${devices.tablet} {
+        padding: 70px 0px;
+        width: 100%;
+        background-color: ${colors.darkBlue};
+    }
     
     `;
 
@@ -22,6 +25,12 @@ export const GetStart = styled(Wrapper)`
     background-color: ${colors.white};
     border-radius: 10px;
     display: flex;
+`;
+
+export const FooterLine = styled.div`
+    height: 10px;
+    width: 100%;
+    background-color: ${colors.semiGrey}
 `;
 
 export const FooterInfoWrap = styled(Wrapper)`
