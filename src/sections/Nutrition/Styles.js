@@ -1,12 +1,17 @@
-import { Image } from "@styled-icons/boxicons-regular";
 import styled, {css} from "styled-components/macro";
 import { StyledHeader } from "../../shared/components/SectionHeader/Styles";
 import { colors, devices, font } from "../../shared/utils/styles";
 import {Wrapper,StyledText} from '../../Styles'
-import { SectionDots } from "../Exercise/Styles";
 
 export const NutritionBackground = styled.div`
-    background-color: ${colors.darkBlue}
+    background-color: ${colors.darkBlue};
+    padding-bottom: 10px;
+    @media ${devices.tablet} {
+        padding-bottom: 60px;
+    }
+    @media ${devices.laptop} {
+        padding-bottom: 90px;
+    }
 `;
 
 export const NutritionWrap = styled(Wrapper)`
@@ -63,6 +68,7 @@ export const TextWrap = styled.div`
 export const ImageWrap = styled.div`
     width: 100%;
     height: 60vw;
+    margin-top: 20px;
     @media ${devices.tablet} {
         grid-area: pic;
         padding: 0px;
@@ -70,6 +76,7 @@ export const ImageWrap = styled.div`
     }
     @media ${devices.laptop} {
         height: 290px;
+        margin: 0px;
     }
 `;
 
@@ -84,5 +91,8 @@ export const NutritionText = styled(StyledText)`
 export const TextHeader = styled(StyledHeader)`
     @media ${devices.tablet} {
        margin: 10px 0px 5px;
+    }
+    @media ${devices.laptop} {
+        margin: 30px 0px 20px;
     }
 `;
