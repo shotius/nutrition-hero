@@ -71,13 +71,42 @@ export const LoginBtn = styled(StyledButton)`
     ${linkShowHide}
 `;
 
-export const MenuIconWrap = styled.div`
+export const MenuIconWrap = styled.button`
+        background: none;
+        border: none;
         width: 27px;
         height: 26px;
         font-size: 22px;
         line-height: 26px;
         ${font.compact};
+        z-index: 1003;
     @media ${devices.tablet} {
         display: none;
     }
+`;
+
+export const Modal = styled.div`
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    top: 0;
+    right: 0;
+    background: ${colors.darkBlue};
+    z-index: 1000;
+    transition: all 0.7s;
+    ${props => (props.shown 
+        && css`
+            width: 100vw;`)};
+`;
+
+export const ModalWrapper = styled.div`
+    padding: 30px 50px;
+    color: white;
+    /* display: flex; */
+`;
+
+export const ModalText = styled.h1`
+    color: white;
+    ${font.bold};
+    ${font.size(50)}
 `;

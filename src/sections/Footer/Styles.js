@@ -10,7 +10,6 @@ export const FooterWrapper = styled.div`
     padding-bottom: 100px;
     @media ${devices.tablet} {
         padding-bottom: 10px;
-        /* text-align: start; */
     }
 `;
 
