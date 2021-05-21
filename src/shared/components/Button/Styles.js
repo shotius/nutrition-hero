@@ -89,9 +89,13 @@ const primary = css`
   }
 `;
 
+const text = css`
+  background-color: black;
+`;
 
 const buttonVariants = {
   navLink: navLink,
   tagLink: tagLink,
   primary: primary,
+  text: text,
 }

@@ -12,7 +12,7 @@ const MainSection = () => {
             <ShortDescription>
                A short description works best
             </ShortDescription>
-            <SignUpBtn type="primary">Start now</SignUpBtn>
+            {/* <SignUpBtn type="primary">Start now</SignUpBtn> */}
         </MainSectionWrap>
     )
 }
