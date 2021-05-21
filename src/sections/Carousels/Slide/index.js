@@ -1,8 +1,7 @@
 import React from 'react'
-import SectionHeader from '../../../shared/components/SectionHeader'
 import { sliderStyle } from '../../../shared/utils/styles'
 import { Img, TextWrap} from '../../../Styles'
-import { ImgWrap, SlideWrapper} from './Styles'
+import { ImgWrap, SlideWrapper, Header, TextHeader} from './Styles'
 
 const Slide = ({ slide, width}) => {
     return (
@@ -11,12 +10,12 @@ const Slide = ({ slide, width}) => {
                <Img src={slide.img} />
            </ImgWrap>
            <TextWrap>
-                <SectionHeader size="large">
+                <Header size="large">
                     {slide.header}
-                </SectionHeader>
-                <SectionHeader size="medium">
+                </Header>
+                <TextHeader size="medium">
                     {slide.name}
-                </SectionHeader>
+                </TextHeader>
                 {slide.text}
            </TextWrap>
        </SlideWrapper>

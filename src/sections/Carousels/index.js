@@ -21,7 +21,7 @@ const Carousel_1 = [
     {
         img: lady,
         name: 'Cheryl Teagann',
-        header: 'Miss Pole Dance 2017', 
+        header: 'Miss Pole Dance', 
         text: 'An international performer and Miss Pole Dance UK 2016 champion and 2017 UK Pole doubles champion. Taught at top London studios, performer at Bodypower.',
         align: sliderStyle.pictureLeft
     }

@@ -17,8 +17,7 @@ const headerTypes = {
         }
     `,
     medium: css`
-        margin-top: 20px;
-        margin-bottom: 5px;
+         margin: 20px 0px 5px;
         letter-spacing: -0.01px;
         line-height: 22px;
         text-transform: capitalize;
@@ -27,6 +26,7 @@ const headerTypes = {
         @media ${devices.laptop} {
             letter-spacing: 0px;
             line-height: 24px;
+            margin: 20px 0px 30px;
             ${font.size(22)};
             ${font.medium};
         }

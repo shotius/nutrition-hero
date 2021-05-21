@@ -1,19 +1,15 @@
 import styled, {css} from "styled-components/macro";
 import { StyledHeader } from "../../shared/components/SectionHeader/Styles";
 import { colors, devices, font } from "../../shared/utils/styles";
-import {Wrapper} from '../../Styles'
-import {Dot, Dots} from '../Carousels/Slider/Styles'
+import {Wrapper,StyledText} from '../../Styles'
+import { Dots } from '../Carousels/Slider/Styles'
 
 export const ExerciseBackground = styled.div`
-    padding: 20px 0px;
+    padding-top: 20px;
     background-color: ${colors.white};
     @media ${devices.tablet} {
         background-color: ${colors.darkBlue};
     }
-`;
-
-export const NutritionBackground = styled.div`
-    background-color: ${colors.darkBlue}
 `;
 
 export const ExerciseWrap = styled(Wrapper)`
@@ -71,7 +67,7 @@ export const ImageWrapper = styled.div`
     }
 `;
 
-export const TagPicture = styled.img.attrs(props => ({
+export const Img = styled.img.attrs(props => ({
     src: props.src
   }))`
     height: 100%;
@@ -94,19 +90,8 @@ export const TextWrap = styled.div`
     }
 `;
 
-const styledText = css`
-    line-height: 20px;
-    ${font.sfRegular};
-    ${font.size(15)};
-    @media ${devices.tablet} {
-        line-height: 24px;
-        ${font.regular};
-        ${font.size(16)};
-    }
-`;
 
-export const ExerciseText = styled.p`
-    ${styledText};
+export const Text = styled(StyledText)`
     color: ${colors.Grey};
     margin-top: 0px;
     @media ${devices.tablet} {
@@ -114,21 +99,6 @@ export const ExerciseText = styled.p`
     }
 `;
 
-export const NutritionText = styled.p`
-    ${styledText};
-    color: ${colors.dirtyWhite};
-    @media ${devices.tablet} {
-        color: ${colors.white};
-    }
-`;
-
-export const NutritionWrap = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding: 90px 0px 50px;
-    position: relative;
-    width: 100%;
-`;
 
 export const SectionDots = styled(Dots)`
     bottom: 0px;
