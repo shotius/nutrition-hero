@@ -26,9 +26,13 @@ export const TextWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 40%;
+    flex-basis: 100%;
     line-height: 24px;
     ${font.regular};
+    @media ${devices.tablet} {
+        flex-basis: 50%;
+        padding: 0px 30px;
+    }
 `;
 
 export const StyledText = styled.p`

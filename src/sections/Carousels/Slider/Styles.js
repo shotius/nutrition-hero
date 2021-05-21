@@ -1,16 +1,20 @@
 import styled, {css} from "styled-components/macro";
-import { mixins, colors} from "../../../shared/utils/styles";
+import { mixins, colors, devices} from "../../../shared/utils/styles";
 
 export const Carousel = styled.div`
     width: 100%;
-    height: 720px;
+    /* height: 500px; */
     display: flex;
     position: relative;
     overflow: hidden;
+    @media ${devices.laptop} {
+        height: 720px;
+    }
 `;
 
 export const SliderContainer = styled.div`
     display: flex;
+    /* flex-wrap: wrap; */
     height: 100%;
     flex-shrink: 0;
     ${props => (props.width && css`width: ${props.width*100}%`)};
@@ -41,14 +45,19 @@ const buttonStyle = css`
     }
 `;
 export const ButtonLeft = styled.button`
-    ${buttonStyle}
+    display: none;
     left: 130px;
+    @media ${devices.tablet} {
+        ${buttonStyle}
+    }
 `;
 
 export const ButtonRight = styled.button`
-    ${buttonStyle}
+    display: none;
     right: 130px;
-    
+    @media ${devices.tablet} {
+        ${buttonStyle}
+    }
 `;
 
 export const Controls = styled.div`
@@ -56,15 +65,18 @@ export const Controls = styled.div`
 `;
 
 export const Dots = styled.div`
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 10px;
   width: 100%;
   display: flex;
   position: absolute;
-  bottom: 70px;
+  bottom: 20px;
   left: 0;
+  @media ${devices.tablet} {
+      bottom: 70px;
+  }
 `;
 
 export const Dot = styled.button`

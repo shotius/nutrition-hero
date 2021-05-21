@@ -76,15 +76,17 @@ export const ImageWrap = styled.div`
     }
     @media ${devices.laptop} {
         height: 290px;
+        width: 430px;
+        justify-self: end;
         margin: 0px;
     }
 `;
 
 export const NutritionText = styled(StyledText)`
     color: ${colors.dirtyWhite};
+    font-weight: 100;
     margin-top: 0px;
     @media ${devices.tablet} {
-        color: ${colors.white};
     }
 `;
 
