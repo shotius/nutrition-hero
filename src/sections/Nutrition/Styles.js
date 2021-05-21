@@ -17,12 +17,15 @@ export const NutritionWrap = styled(Wrapper)`
         padding: 90px 20px 20px 20px;
         display: grid;
         grid-template-columns: 40% auto;
-        column-gap: 100px;
+        column-gap: 50px;
         grid-template-rows: 50px 30px auto;
         grid-template-areas: 
             "header pic"
             "nav pic"
             "text pic";
+   }
+   @media ${devices.laptop} {
+    column-gap: 100px;
    }
 `;
 
@@ -36,13 +39,16 @@ export const Header = styled(StyledHeader)`
 
 export const Nav = styled.div`
     flex-basis: 100%;
-    padding: 20px 0px 30px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     @media ${devices.tablet} {
+        padding: 10px 0px 20px 0px;
         grid-area: nav;
         justify-self: start;
+    }
+    @media ${devices.laptop} {
+        padding: 20px 0px 30px 0px;
     }
 `;
 
@@ -60,7 +66,7 @@ export const ImageWrap = styled.div`
     @media ${devices.tablet} {
         grid-area: pic;
         padding: 0px;
-        height: 219px;
+        height: 229px;
     }
     @media ${devices.laptop} {
         height: 290px;
@@ -77,7 +83,6 @@ export const NutritionText = styled(StyledText)`
 
 export const TextHeader = styled(StyledHeader)`
     @media ${devices.tablet} {
-        margin-top: 30px;
-        margin-bottom: 15px;
+       margin: 10px 0px 5px;
     }
 `;

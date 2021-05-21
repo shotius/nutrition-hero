@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Button from '../../shared/components/Button'
 import { TextWrap, NutritionText, NutritionBackground, NutritionWrap, Nav, ImageWrap, TextHeader, Header} from './Styles'
-import { Img } from '../Exercise/Styles'
+import { Img, SectionDots } from '../Exercise/Styles'
 import food_1 from '../../shared/assests/Rectangle 1473.png'
 import { Dot, Dots } from '../Carousels/Slider/Styles'
 
@@ -40,7 +40,7 @@ const Nutrition = React.forwardRef((props,  ref) => {
                             type="tagLink" 
                             color='dirtyWhite' 
                             onhover="white"
-                            onClick={() => {}}
+                            onClick={() => setActiveIndex(data.id)}
                             >
                                 {data.heading}
                         </Button>
@@ -51,15 +51,21 @@ const Nutrition = React.forwardRef((props,  ref) => {
                 </ImageWrap>
                 <TextWrap color="white">
                     <TextHeader size="medium" color="white">
-                        A short title works
+                        {data[activeIndex].header}
                     </TextHeader>
                     <NutritionText>
-                        best At home to gym, crossfit to pilates, yoga to bodyweight, as well as healthy and easy to make breakfasts, lunches, dinners and snacks. We want to make sure you enjoy the journey for a healthy lifestyle.
+                       {data[activeIndex].text}
                     </NutritionText>
                 </TextWrap>
-                <Dots>
-                    <Dot />
-                </Dots>
+                <SectionDots>
+                    {data.map(data => (
+                        <Dot 
+                            key={data.id}
+                            isActive={activeIndex === data.id && true}
+                            onClick={() => setActiveIndex(data.id)}
+                            />
+                    ))}
+                </SectionDots>
             </NutritionWrap>
         </NutritionBackground>
     )

@@ -1,7 +1,6 @@
 import Header from './sections/Header'
 import MainSection from './sections/MainSection';
 import NormalizeStyle from './NormalizeStyle';
-import SectionTwo from './sections/SecondSection'
 import Carousels from './sections/Carousels';
 import Footer from './sections/Footer';
 import ForthSection from './sections/ForthSection';
@@ -29,10 +28,9 @@ function App() {
       <MainSection />
       <Exercise />
       <Nutrition />
-      {/* <SectionTwo ref={ref} />  */}
-      {/* <Carousels />
+      <Carousels />
       <ForthSection/>
-      <Footer /> */}
+      <Footer />
   </>
   );
 }
