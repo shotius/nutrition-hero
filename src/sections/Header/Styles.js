@@ -120,3 +120,10 @@ export const ModalSignUp = styled(StyledButton)`
     width: 100%;
     height: 50px;
 `;
+
+export const ModalLogin = styled(StyledButton)`
+    width: 100%;
+    height: 50px;
+    background-color: inherit;
+    border-color: ${colors.darkBlue}
+`;

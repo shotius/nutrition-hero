@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Wrap, PageLogo, NavBar, Sticky, NavLink, IconWrap, SignUpBtn, LoginBtn, Modal, ModalWrapper, ModalText, ModalSignUp} from './Styles'
+import { Wrap, PageLogo, NavBar, Sticky, NavLink, IconWrap, SignUpBtn, LoginBtn, Modal, ModalWrapper, ModalText, ModalSignUp, ModalLogin} from './Styles'
 import {Menu} from '@styled-icons/boxicons-regular/Menu'
 import {CloseOutline} from '@styled-icons/evaicons-outline/CloseOutline'
 
@@ -35,6 +35,7 @@ const Header = ({exercisesRef, nutritionRef}) => {
                 </div>
                 <div>
                     <ModalSignUp type="primary" onClick={() => {}}>Sign up</ModalSignUp>
+                    <ModalLogin type="primary" onClick={() => {}}>Login</ModalLogin>
                 </div>
             </ModalWrapper>
         </Modal>
