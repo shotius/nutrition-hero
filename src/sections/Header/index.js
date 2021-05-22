@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Wrap, PageLogo, NavBar, Sticky, NavLink, MenuIconWrap, SignUpBtn, LoginBtn, Modal, ModalWrapper, ModalText} from './Styles'
+import { Wrap, PageLogo, NavBar, Sticky, NavLink, IconWrap, SignUpBtn, LoginBtn, Modal, ModalWrapper, ModalText, ModalSignUp} from './Styles'
 import {Menu} from '@styled-icons/boxicons-regular/Menu'
-
+import {CloseOutline} from '@styled-icons/evaicons-outline/CloseOutline'
 
 const Header = ({exercisesRef, nutritionRef}) => {
     const [isModalShown, setIsModalShown] = useState(false)
@@ -17,20 +17,25 @@ const Header = ({exercisesRef, nutritionRef}) => {
                     <NavLink type="navLink" isActive={false} onClick={() => {}}>app</NavLink>
                     <SignUpBtn type="primary" onClick={() => {}}>Sign up</SignUpBtn>
                     <LoginBtn type="login" onClick={() => {}}>login</LoginBtn>
-                    <MenuIconWrap onClick={() => setIsModalShown(true)}>
+                    <IconWrap onClick={() => setIsModalShown(true)}>
                         <Menu size="32"/>
-                    </MenuIconWrap>
+                    </IconWrap>
                 </NavBar>
             </Wrap>
         </Sticky>
         <Modal shown={isModalShown}>
             <ModalWrapper>
-                <MenuIconWrap onClick={() => setIsModalShown(false)}>
-                    <Menu size="50" color="white"/>
-                </MenuIconWrap>
-                <ModalText color="white">Exercise</ModalText>
-                <ModalText color="white">Nutrition</ModalText>
-                <ModalText color="white">Expertise</ModalText>
+                <IconWrap onClick={() => setIsModalShown(false)}>
+                    <CloseOutline size="50" color="white"/>
+                </IconWrap>
+                <div>
+                    <ModalText color="white">Exercise</ModalText>
+                    <ModalText color="white">Nutrition</ModalText>
+                    <ModalText color="white">Expertise</ModalText>
+                </div>
+                <div>
+                    <ModalSignUp type="primary" onClick={() => {}}>Sign up</ModalSignUp>
+                </div>
             </ModalWrapper>
         </Modal>
         </>
