@@ -4,6 +4,8 @@ import { SliderContainer, ButtonLeft, ButtonRight, Carousel, Dots, Dot, Controls
 import rightArrow from '../../../shared/assests/Group 2350.svg'
 import leftArrow from '../../../shared/assests/Group 2416.svg'
 import { safeCompare, safeOperation } from '../../../shared/utils/functionsForFloats'
+import { useSwipeable } from 'react-swipeable'
+
 
 // because js have trouble with floating point numbers I created safe operations for it
 // and wrapped all float operation 
@@ -21,6 +23,7 @@ const Slider = ({slides}) => {
     const [direction , setDirection] = useState(-1)
     const [sliderMoves, setSliderMoves] = useState(0)
 
+   
     // slider timer
     // useEffect(() => {
     //     const timer = setTimeout(() => goRight(), sleepTime)
@@ -45,6 +48,11 @@ const Slider = ({slides}) => {
             setTransition(transitionStyle)
         }
     }
+
+    const handlers = useSwipeable({
+        onSwipedLeft: goRight,
+        onSwipedRight: goLeft
+      });
 
     // if slide happend right and it was the last slide jump to the first slide
     // if slide happend left and it was the first slide jump to the last slide
@@ -91,6 +99,7 @@ const Slider = ({slides}) => {
                 transition={transition}
                 onTransitionEnd={onTransitionEnd}
                 width={slides.length + 2}
+                {...handlers}
                 >
                     <Slide slide={slides[slides.length - 1]} width={-shiftUnit}></Slide>
                     {slides.map((slide, i) => (
