@@ -49,8 +49,8 @@ const navLink = css`
   text-transform: uppercase;
   margin-top: 7px;
   line-height: 17px;
-  ${btmLine}
-  
+  ${btmLine};
+  ${props => (props.isActive && css`${font.bold}`)}
 `;
 
 
@@ -59,9 +59,9 @@ const tagLink = css`
   padding: 0px 15px;
   margin-right: 16px;
   font-size: 12px;
-
-  ${props => (props.color && css`color: ${colors[props.color]}`)};
   ${btmLine}
+  ${props => (props.isActive && css`${font.bold}`)}
+  ${props => (props.color && css`color: ${colors[props.color]}`)};
   &:hover {
     ${props => (props.onhover 
     ? css`
@@ -89,9 +89,13 @@ const primary = css`
   }
 `;
 
+const text = css`
+  background-color: black;
+`;
 
 const buttonVariants = {
   navLink: navLink,
   tagLink: tagLink,
   primary: primary,
+  text: text,
 }

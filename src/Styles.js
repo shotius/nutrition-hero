@@ -31,7 +31,6 @@ export const TextWrap = styled.div`
     ${font.regular};
     @media ${devices.tablet} {
         flex-basis: 50%;
-        padding: 0px 30px;
     }
 `;
 

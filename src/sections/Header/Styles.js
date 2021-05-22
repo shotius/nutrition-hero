@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components/macro'
 import img from '../../shared/assests/Logo Black Full-1.svg'
+import Button from '../../shared/components/Button';
 import { StyledButton } from '../../shared/components/Button/Styles';
 import { devices, mixins, colors, font } from '../../shared/utils/styles';
 import { Wrapper } from '../../Styles';
@@ -71,7 +72,9 @@ export const LoginBtn = styled(StyledButton)`
     ${linkShowHide}
 `;
 
-export const MenuIconWrap = styled.div`
+export const IconWrap = styled.button`
+        background: none;
+        border: none;
         width: 27px;
         height: 26px;
         font-size: 22px;
@@ -80,4 +83,47 @@ export const MenuIconWrap = styled.div`
     @media ${devices.tablet} {
         display: none;
     }
+`;
+
+export const Modal = styled.div`
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    top: 0;
+    right: 0;
+    background: ${colors.darkBlue};
+    z-index: 1000;
+    transition: all 0.7s;
+    ${props => (props.shown 
+        && css`
+            width: 100vw;`)};
+`;
+
+export const ModalWrapper = styled.div`
+    padding: 30px 50px;
+    color: white;
+    height: 90%;
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-between;
+`;
+
+
+export const ModalText = styled.h1`
+    color: white;
+    ${font.bold};
+    ${font.size(50)}
+`;
+
+
+export const ModalSignUp = styled(StyledButton)`
+    width: 100%;
+    height: 50px;
+`;
+
+export const ModalLogin = styled(StyledButton)`
+    width: 100%;
+    height: 50px;
+    background-color: inherit;
+    border-color: ${colors.darkBlue}
 `;

@@ -44,12 +44,13 @@ export const ShortDescription = styled.p`
 export const SignUpBtn = styled(StyledButton)`
         position: fixed;
         bottom: 10px;
-        z-index: 1000;
-        width: 93%;
+        z-index: 999;
+        width: 95%;
+        height: 50px;
+        ${font.regular}
     @media ${devices.tablet} {
         position: relative;
         width: 324px;
         margin-top: 39px;
-        height: 50px;
     }
 `;
