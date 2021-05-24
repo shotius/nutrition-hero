@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components/macro";
+import styled from "styled-components/macro";
 import { font, devices } from "./shared/utils/styles";
 
 export const Wrapper = styled.div`

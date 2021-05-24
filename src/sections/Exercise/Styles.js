@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components/macro";
 import { StyledHeader } from "../../shared/components/SectionHeader/Styles";
-import { colors, devices, font } from "../../shared/utils/styles";
+import { colors, devices } from "../../shared/utils/styles";
 import {Wrapper,StyledText} from '../../Styles'
 import { Dots } from '../Carousels/Slider/Styles'
 

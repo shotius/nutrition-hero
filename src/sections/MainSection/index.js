@@ -1,5 +1,4 @@
 import React from 'react'
-import { Wrapper } from '../../Styles';
 import {  MainSectionWrap, PageHeading, ShortDescription, SignUpBtn } from './Styles';
 
 

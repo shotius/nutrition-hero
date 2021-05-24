@@ -3,7 +3,7 @@ import Button from '../../shared/components/Button'
 import { TextWrap, NutritionText, NutritionBackground, NutritionWrap, Nav, ImageWrap, TextHeader, Header} from './Styles'
 import { Img, SectionDots } from '../Exercise/Styles'
 import food_1 from '../../shared/assests/Rectangle 1473.png'
-import { Dot, Dots } from '../Carousels/Slider/Styles'
+import { Dot } from '../Carousels/Slider/Styles'
 
 
 const Nutrition = React.forwardRef((props,  ref) => {

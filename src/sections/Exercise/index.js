@@ -39,7 +39,7 @@ const Exercise = React.forwardRef((props,  ref) => {
     return (    
         <ExerciseBackground>
             <Wrapper>
-                <ExerciseWrap>
+                <ExerciseWrap ref={ref}>
                     <Header  size="large" flexPosition="center">
                         Exercise
                     </Header>

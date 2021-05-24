@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components/macro'
 import img from '../../shared/assests/Logo Black Full-1.svg'
-import Button from '../../shared/components/Button';
 import { StyledButton } from '../../shared/components/Button/Styles';
 import { devices, mixins, colors, font } from '../../shared/utils/styles';
 import { Wrapper } from '../../Styles';
@@ -97,6 +96,9 @@ export const Modal = styled.div`
     ${props => (props.shown 
         && css`
             width: 100vw;`)};
+      @media ${devices.tablet} {
+        display: none;
+    }  
 `;
 
 export const ModalWrapper = styled.div`

@@ -21,8 +21,8 @@ const ForthSection = () => {
                 </SectionHeader>
                 Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada velit. Nullam et maximus lorem. Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada velit. Nullam et maximus lorem. Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada velit. Nullam et maximus lorem.
                 <AppStoreWrap>
-                    <a href="#" style={{cursor: "pointer"}}><img src={appStorImg} style={{marginRight: 16}}/></a>
-                    <a href="#" style={{cursor: "pointer"}}><img src={googlePlayImg} /></a>
+                    <a href="https://www.apple.com/app-store/" target="_blank" rel="noreferrer" style={{cursor: "pointer"}}><img src={appStorImg} style={{marginRight: 16}} alt='app store link'/></a>
+                    <a href="https://play.google.com/store/apps" target="_blank" rel="noreferrer" style={{cursor: "pointer"}}><img src={googlePlayImg} alt='googlePlayLInke'/></a>
                 </AppStoreWrap>
             </TextWrap>
          </FourthSectionWrap>

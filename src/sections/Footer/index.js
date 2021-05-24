@@ -21,8 +21,8 @@ const Footer = () => {
             <FooterLine />
             <FooterInfoWrap>
                 <MobileApps>
-                    <a href="#"><AppStore src={appStorImg}/></a>
-                    <a href="#"><GoogleStore src={googlePlayImg} /></a>
+                    <a href="https://www.apple.com/app-store/" target="_blank" rel="noreferrer"><AppStore src={appStorImg}/></a>
+                    <a href="https://play.google.com/store/apps" target="_blank" rel="noreferrer"><GoogleStore src={googlePlayImg} /></a>
                 </MobileApps>
                 <LinksWrap>
                     <Btn onClick={() => setExploreShown(!exploreShown)}>explore</Btn>

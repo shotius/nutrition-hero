@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components/macro";
 import {colors, font, mixins } from '../../utils/styles'
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;

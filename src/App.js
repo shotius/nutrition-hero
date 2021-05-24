@@ -4,29 +4,25 @@ import NormalizeStyle from './NormalizeStyle';
 import Carousels from './sections/Carousels';
 import Footer from './sections/Footer';
 import ForthSection from './sections/ForthSection';
-import { createRef, useRef } from 'react';
+import { createRef, useRef} from 'react';
 import Fonts from './Fonts'
 import Exercise from './sections/Exercise'
 import Nutrition from './sections/Nutrition/Index';
 
 function App() {
-  const exercisesRef = createRef()
+  const exerciseRef = createRef()
   const nutritionRef = useRef()
-  const expertiesRef = useRef()
-  const App = useRef()
+  // const expertiesRef = useRef()
+  // const App = useRef()
 
-  const ref = {
-    exercisesRef,
-    nutritionRef,
-  }
   
   return (
    <>
       <Fonts />
       <NormalizeStyle />
-      <Header exercisesRef={exercisesRef} nutritionRef={nutritionRef} />
+      <Header exerciseRef={exerciseRef} nutritionRef={nutritionRef} />
       <MainSection />
-      <Exercise />
+      <Exercise ref={exerciseRef}/>
       <Nutrition />
       <Carousels />
       <ForthSection/>
