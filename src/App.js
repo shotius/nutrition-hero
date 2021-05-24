@@ -15,13 +15,6 @@ function App() {
   const expertiesRef = useRef()
   const appRef = useRef()
 
-  useEffect(() => {
-    console.log('exercise', exerciseRef.current)
-    console.log('nutri', nutritionRef.current)
-    console.log('expert', expertiesRef.current)
-    console.log('app', appRef.current)
-  })
-  
   return (
    <>
       <Fonts />

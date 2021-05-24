@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { Wrap, PageLogo, NavBar, Sticky, NavLink, IconWrap, SignUpBtn, LoginBtn, Modal, ModalWrapper, ModalText, ModalSignUp, ModalLogin} from './Styles'
-import {Menu} from '@styled-icons/boxicons-regular/Menu'
-import {CloseOutline} from '@styled-icons/evaicons-outline/CloseOutline'
+import { Menu } from '@styled-icons/boxicons-regular/Menu'
+import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline'
 import { useScroll } from '../../shared/hooks/useScroll'
+import { useActiveNav } from '../../shared/hooks/useActiveNav'
 
 const Header = (refs) => {
     const [isModalShown, setIsModalShown] = useState(false)
-    const [isExerciseActive,setIsExerciseActive] = useState(false)
-    const scrollY = useScroll()
-  
-    useEffect(() => {
-    const viewportOffset = refs.exerciseRef.current.getBoundingClientRect();
-    const ExerciseTop = viewportOffset.top
-
-    if (ExerciseTop < 70 && ExerciseTop > 60) {
-      setIsExerciseActive(true)
-    }
-
-    }, [scrollY])
+    const {
+        isExerciseActive,
+        isNutritionActive,
+        isExpertiesActive,
+        isAppActive,
+    } = useActiveNav(refs)
 
     return (
         <>
@@ -26,9 +21,9 @@ const Header = (refs) => {
                 <PageLogo />
                 <NavBar >
                     <NavLink type="navLink" isActive={isExerciseActive} onClick={() => {}}>Exercises</NavLink>
-                    <NavLink type="navLink" isActive={false} onClick={() => {}}>nutrition</NavLink>
-                    <NavLink type="navLink" isActive={false} onClick={() => {}}>expreties</NavLink>
-                    <NavLink type="navLink" isActive={false} onClick={() => {}}>app</NavLink>
+                    <NavLink type="navLink" isActive={isNutritionActive} onClick={() => {}}>nutrition</NavLink>
+                    <NavLink type="navLink" isActive={isExpertiesActive} onClick={() => {}}>expreties</NavLink>
+                    <NavLink type="navLink" isActive={isAppActive} onClick={() => {}}>app</NavLink>
                     <SignUpBtn type="primary" onClick={() => {}}>Sign up</SignUpBtn>
                     <LoginBtn type="login" onClick={() => {}}>login</LoginBtn>
                     <IconWrap onClick={() => setIsModalShown(true)}>
