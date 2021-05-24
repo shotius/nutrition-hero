@@ -30,7 +30,7 @@ const Nutrition = React.forwardRef((props,  ref) => {
     return (    
         <NutritionBackground>
             <NutritionWrap>
-                <Header size="large" color="white">
+                <Header size="large" color="white" ref={ref}>
                     Nutrition
                 </Header>
                 <Nav>

@@ -4,14 +4,13 @@ import {Menu} from '@styled-icons/boxicons-regular/Menu'
 import {CloseOutline} from '@styled-icons/evaicons-outline/CloseOutline'
 import { useScroll } from '../../shared/hooks/useScroll'
 
-const Header = ({exerciseRef, nutritionRef}) => {
+const Header = (refs) => {
     const [isModalShown, setIsModalShown] = useState(false)
+    const [isExerciseActive,setIsExerciseActive] = useState(false)
     const scrollY = useScroll()
   
-    const [isExerciseActive, setIsExerciseActive] = useState(false)
-    
     useEffect(() => {
-    const viewportOffset = exerciseRef.current.getBoundingClientRect();
+    const viewportOffset = refs.exerciseRef.current.getBoundingClientRect();
     const ExerciseTop = viewportOffset.top
 
     if (ExerciseTop < 70 && ExerciseTop > 60) {

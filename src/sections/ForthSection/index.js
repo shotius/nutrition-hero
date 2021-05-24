@@ -6,13 +6,13 @@ import tabletImg from '../../shared/assests/Mobile App@2x.png'
 import appStorImg from '../../shared/assests/download-on-the-app-store-apple-1.svg'
 import googlePlayImg from '../../shared/assests/google-play-badge-1.svg'
 
-const ForthSection = () => {
+const ForthSection = React.forwardRef((props, ref) => {
     return (
         <FourthSectionWrap>
             <ImgWrapper>
                 <Img src={tabletImg} />
             </ImgWrapper>
-            <TextWrap>
+            <TextWrap ref={ref}>
                 <SectionHeader size="large">
                         New app. New you
                 </SectionHeader>
@@ -27,5 +27,5 @@ const ForthSection = () => {
             </TextWrap>
          </FourthSectionWrap>
     )
-}
+})
 export default ForthSection
