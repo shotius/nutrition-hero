@@ -57,6 +57,13 @@ export const NavLink = styled(StyledButton)`
     &:hover {
         ${font.black}
     }
+    &:before {
+        ${props => (props.content && css`content: '${props.content}'`)};
+        height: 0px;
+        ${font.black};
+        visibility: hidden;
+        /* content: 'Nutrition'; */
+    }
 `;
 
 export const SignUpBtn = styled(StyledButton)`

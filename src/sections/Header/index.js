@@ -28,10 +28,10 @@ const Header = (refs) => {
             <Wrap>
                 <PageLogo />
                 <NavBar >
-                    <NavLink type="navLink" isActive={isExerciseActive} onClick={() => handleScroll(refs.exerciseRef)}>Exercises</NavLink>
-                    <NavLink type="navLink" isActive={isNutritionActive} onClick={() => handleScroll(refs.nutritionRef)}>nutrition</NavLink>
-                    <NavLink type="navLink" isActive={isExpertiesActive} onClick={() => handleScroll(refs.expertiesRef)}>expreties</NavLink>
-                    <NavLink type="navLink" isActive={isAppActive} onClick={() => handleScroll(refs.appRef)}>app</NavLink>
+                    <NavLink content="EXERCISESs" type="navLink" isActive={isExerciseActive} onClick={() => handleScroll(refs.exerciseRef)}>Exercises</NavLink>
+                    <NavLink content="NUTRITIONn" type="navLink" isActive={isNutritionActive} onClick={() => handleScroll(refs.nutritionRef)}>nutrition</NavLink>
+                    <NavLink content="EXPERTIESs" type="navLink" isActive={isExpertiesActive} onClick={() => handleScroll(refs.expertiesRef)}>expreties</NavLink>
+                    <NavLink content="APPp" type="navLink" isActive={isAppActive} onClick={() => handleScroll(refs.appRef)}>app</NavLink>
                     <SignUpBtn type="primary" onClick={() => {}}>Sign up</SignUpBtn>
                     <LoginBtn type="login" onClick={() => {}}>login</LoginBtn>
                     <IconWrap onClick={() => setIsModalShown(true)}>
