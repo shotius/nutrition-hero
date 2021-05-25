@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Wrap, PageLogo, NavBar, Sticky, NavLink, IconWrap, SignUpBtn, LoginBtn, Modal, ModalWrapper, ModalText, ModalSignUp, ModalLogin} from './Styles'
 import { Menu } from '@styled-icons/boxicons-regular/Menu'
 import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline'
-import { useScroll } from '../../shared/hooks/useScroll'
 import { useActiveNav } from '../../shared/hooks/useActiveNav'
 
 const Header = (refs) => {
@@ -15,10 +14,11 @@ const Header = (refs) => {
     } = useActiveNav(refs)
 
     // scroll to specific ref
+    // scroll is not done with href, because I wanted -80px of y offset
     const handleScroll = (ref) => {
         const yOffeset = -80;
         const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffeset ;
-        window.scrollTo({top: y, behavior: 'smooth'})
+        window.scrollTo({top: y})
     }
 
     return (

@@ -24,7 +24,7 @@ const Slider = ({slides}) => {
     const [sliderMoves, setSliderMoves] = useState(0)
 
    
-    // slider timer
+    // // slider timer
     // useEffect(() => {
     //     const timer = setTimeout(() => goRight(), sleepTime)
     //     return () => clearTimeout(timer)
