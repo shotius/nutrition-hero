@@ -39,6 +39,7 @@ const Nutrition = React.forwardRef((props,  ref) => {
                             key={data.id}
                             type="tagLink" 
                             color='dirtyWhite' 
+                            isActive={activeIndex === data.id && true}
                             onhover="white"
                             onClick={() => setActiveIndex(data.id)}
                             >

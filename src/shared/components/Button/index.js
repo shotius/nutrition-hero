@@ -7,7 +7,6 @@ const Button = ({
     width,
     margin,
     color, 
-    onhover,
     onClick,
     isActive
 }) => {
@@ -20,7 +19,6 @@ const Button = ({
             width={width}
             margin={margin}
             color={color}
-            onhover={onhover}
             onClick={handleClick}
             isActive={isActive}
         >

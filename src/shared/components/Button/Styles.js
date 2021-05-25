@@ -62,14 +62,6 @@ const tagLink = css`
   ${btmLine}
   ${props => (props.isActive && css`${font.bold}`)}
   ${props => (props.color && css`color: ${colors[props.color]}`)};
-  &:hover {
-    ${props => (props.onhover 
-    ? css`
-      color: ${colors[props.onhover]}`
-    : css`
-      color: black`)}
-    ${font.bold}
-  }
 `;
 
 const primary = css`
