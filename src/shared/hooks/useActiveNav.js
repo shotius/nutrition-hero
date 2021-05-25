@@ -20,11 +20,11 @@ export function useActiveNav(refs) {
 
 
         if (exerciseOffset.top < top && exerciseOffset.top > bottom) {
-                setIsExerciseActive(true)
-                setIsNutritionActive(false)
-                setIsExpertiesActive(false)
-                setIsAppActive(false)
-            }
+            setIsExerciseActive(true)
+            setIsNutritionActive(false)
+            setIsExpertiesActive(false)
+            setIsAppActive(false)
+        }
         if (nutritionOffset.top < top && nutritionOffset.top > bottom) {
             setIsNutritionActive(true)
             setIsExerciseActive(false)

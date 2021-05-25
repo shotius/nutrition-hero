@@ -46,7 +46,8 @@ const paddingLaptop = css`
 `;
 
 export const Text = styled.div`
-      @media ${devices.tablet} {
+    padding: 16px;
+    @media ${devices.tablet} {
         ${paddingTablet}
     }
     @media ${devices.laptop} {

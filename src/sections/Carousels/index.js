@@ -54,10 +54,10 @@ const Carousel_2 = [
 
 const Carousels = React.forwardRef((props, ref) => {
     return (
-        <Wrapper ref={ref}>
+        <div ref={ref}>
             <Slider slides={Carousel_1}/>
             <Slider slides={Carousel_2}/>
-        </Wrapper>
+        </div>
     )
 })
 export default Carousels

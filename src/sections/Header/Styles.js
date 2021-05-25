@@ -62,7 +62,6 @@ export const NavLink = styled(StyledButton)`
         height: 0px;
         ${font.black};
         visibility: hidden;
-        /* content: 'Nutrition'; */
     }
 `;
 
