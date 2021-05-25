@@ -16,6 +16,7 @@ const Header = (refs) => {
     // scroll to specific ref
     // scroll is not done with href, because I wanted -80px of y offset
     const handleScroll = (ref) => {
+        setIsModalShown(false)
         const yOffeset = -80;
         const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffeset ;
         window.scrollTo({top: y})
@@ -45,9 +46,9 @@ const Header = (refs) => {
                     <CloseOutline size="50" color="white"/>
                 </IconWrap>
                 <div>
-                    <ModalText color="white">Exercise</ModalText>
-                    <ModalText color="white">Nutrition</ModalText>
-                    <ModalText color="white">Expertise</ModalText>
+                    <ModalText onClick={() => handleScroll(refs.exerciseRef)}>Exercise</ModalText>
+                    <ModalText onClick={() => handleScroll(refs.nutritionRef)}>Nutrition</ModalText>
+                    <ModalText onClick={() => handleScroll(refs.expertiesRef)}>Expertise</ModalText>
                 </div>
                 <div>
                     <ModalSignUp type="primary" onClick={() => {}}>Sign up</ModalSignUp>

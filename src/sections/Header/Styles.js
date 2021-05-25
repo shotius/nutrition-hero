@@ -111,8 +111,12 @@ export const ModalWrapper = styled.div`
 `;
 
 
-export const ModalText = styled.h1`
+export const ModalText = styled.button`
     color: white;
+    display: block;
+    background-color: inherit;
+    border: none;
+    padding: 20px 0px;
     ${font.bold};
     ${font.size(50)}
 `;
