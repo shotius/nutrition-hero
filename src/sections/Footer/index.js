@@ -6,10 +6,25 @@ import arrowUp from '../../shared/assests/arrow_up.svg'
 import arrowDown from '../../shared/assests/arrow_down.svg'
 
 const Footer = () => {
-    const [exploreShown, setExploreShown] = useState(false)
-    const [companyShown, setCompanyShown] = useState(true)
-    const [blogShown, setBlogShown] = useState(false)
-    const [socialShown, setSocialShown] = useState(false)
+    const [isLinksOpen, setIsLinksOpen] = useState({
+        exploreShown: false,
+        companyShown: true,
+        blogShown: false,
+        socialShown: false
+    })
+
+    const { exploreShown, companyShown, blogShown, socialShown} = isLinksOpen 
+
+    const openCloseInfo = (text) => {
+        const obj = {}
+        for (let link in isLinksOpen) {
+            obj[link] =  false
+        }
+        setIsLinksOpen({
+            ...obj,
+            [text]: true
+        })
+    }
     return (
         <FooterWrapper>
             <GetStartedWrap>
@@ -25,7 +40,7 @@ const Footer = () => {
                     <a href="https://play.google.com/store/apps" target="_blank" rel="noreferrer"><GoogleStore src={googlePlayImg} /></a>
                 </MobileApps>
                 <LinksWrap>
-                    <Btn onClick={() => setExploreShown(!exploreShown)}>explore</Btn>
+                    <Btn onClick={() => openCloseInfo('exploreShown')}>explore</Btn>
                     <UpDownArrow src={exploreShown ? arrowUp : arrowDown} />
                     <Links shown={exploreShown}>
                         <Link>Exercise</Link>
@@ -35,7 +50,7 @@ const Footer = () => {
                     </Links>
                 </LinksWrap>
                 <LinksWrap>
-                    <Btn onClick={() => setCompanyShown(!companyShown)}>company</Btn>
+                    <Btn onClick={() => openCloseInfo('companyShown')}>company</Btn>
                     <UpDownArrow src={companyShown ? arrowUp : arrowDown} />
                     <Links shown={companyShown}>
                         <Link>Legal</Link>
@@ -44,7 +59,7 @@ const Footer = () => {
                     </Links>
                 </LinksWrap>
                 <LinksWrap>
-                    <Btn onClick={() => setBlogShown(!blogShown)}>blog</Btn>
+                    <Btn onClick={() => openCloseInfo('blogShown')}>blog</Btn>
                     <UpDownArrow src={blogShown ? arrowUp : arrowDown} />
                     <Links shown={blogShown}>
                         <Link>Latest Post One</Link>
@@ -53,7 +68,7 @@ const Footer = () => {
                     </Links>
                 </LinksWrap>
                 <LinksWrap>
-                    <Btn onClick={() => setSocialShown(!socialShown)}>Social</Btn>
+                    <Btn onClick={() => openCloseInfo('socialShown')}>social</Btn>
                     <UpDownArrow src={socialShown ? arrowUp : arrowDown} />
                     <Links shown={socialShown}>
                         <Link>Facebook</Link>
