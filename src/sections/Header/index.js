@@ -14,16 +14,23 @@ const Header = (refs) => {
         isAppActive,
     } = useActiveNav(refs)
 
+    // scroll to specific ref
+    const handleScroll = (ref) => {
+        const yOffeset = -80;
+        const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffeset ;
+        window.scrollTo({top: y, behavior: 'smooth'})
+    }
+
     return (
         <>
         <Sticky>
             <Wrap>
                 <PageLogo />
                 <NavBar >
-                    <NavLink type="navLink" isActive={isExerciseActive} onClick={() => {}}>Exercises</NavLink>
-                    <NavLink type="navLink" isActive={isNutritionActive} onClick={() => {}}>nutrition</NavLink>
-                    <NavLink type="navLink" isActive={isExpertiesActive} onClick={() => {}}>expreties</NavLink>
-                    <NavLink type="navLink" isActive={isAppActive} onClick={() => {}}>app</NavLink>
+                    <NavLink type="navLink" isActive={isExerciseActive} onClick={() => handleScroll(refs.exerciseRef)}>Exercises</NavLink>
+                    <NavLink type="navLink" isActive={isNutritionActive} onClick={() => handleScroll(refs.nutritionRef)}>nutrition</NavLink>
+                    <NavLink type="navLink" isActive={isExpertiesActive} onClick={() => handleScroll(refs.expertiesRef)}>expreties</NavLink>
+                    <NavLink type="navLink" isActive={isAppActive} onClick={() => handleScroll(refs.appRef)}>app</NavLink>
                     <SignUpBtn type="primary" onClick={() => {}}>Sign up</SignUpBtn>
                     <LoginBtn type="login" onClick={() => {}}>login</LoginBtn>
                     <IconWrap onClick={() => setIsModalShown(true)}>

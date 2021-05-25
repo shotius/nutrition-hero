@@ -9,7 +9,7 @@ export function useActiveNav(refs) {
 
     const scrollY = useScroll()
 
-    const {exerciseRef, appRef} = refs
+    // const rangeTop = 
     
     useEffect(() => {
         const exerciseOffset = refs.exerciseRef.current.getBoundingClientRect();
@@ -18,7 +18,7 @@ export function useActiveNav(refs) {
         const appOffset = refs.appRef.current.getBoundingClientRect();
 
 
-        if (exerciseOffset.top < 80 && exerciseOffset.top > 30) {
+        if (exerciseOffset.top < 50 && exerciseOffset.top > -50) {
                 setIsExerciseActive(true)
                 setIsNutritionActive(false)
                 setIsExpertiesActive(false)
