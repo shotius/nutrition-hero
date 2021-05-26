@@ -21,8 +21,7 @@ import { useSwipeable } from "react-swipeable";
 // and wrapped all float operation
 // slides are aligned [n, 1, 2, 3, 4..., n, 1]
 // and when slider goes to the last slide it jumps to the first and wise versa
-const Slider = ({ slides }) => {
-  const sleepTime = 3000;
+const Slider = ({ slides, sleepTime }) => {
   const transitionStyle = "all 0.5s";
   const shiftUnit = Math.floor((-100 / (slides.length + 2)) * 100) / 100;
   const precision = -shiftUnit / 2;
@@ -33,11 +32,11 @@ const Slider = ({ slides }) => {
   const [direction, setDirection] = useState(-1);
   const [sliderMoves, setSliderMoves] = useState(0);
 
-  // // slider timer
-  // useEffect(() => {
-  //     const timer = setTimeout(() => goRight(), sleepTime)
-  //     return () => clearTimeout(timer)
-  // }, [sliderMoves])
+  // slider timer
+  useEffect(() => {
+      const timer = setTimeout(() => goRight(), sleepTime)
+      return () => clearTimeout(timer)
+  }, [sliderMoves])
 
   const goLeft = () => {
     if (!isSliding) {

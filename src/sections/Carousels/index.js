@@ -69,8 +69,8 @@ const Carousels = React.forwardRef((props, ref) => {
 
   return (
     <Wrap>
-      <Slider slides={Carousel_1} />
-      <Slider slides={Carousel_2} />
+      <Slider slides={Carousel_1} sleepTime={3000} />
+      <Slider slides={Carousel_2} sleepTime={5000} />
     </Wrap>
   );
 });
